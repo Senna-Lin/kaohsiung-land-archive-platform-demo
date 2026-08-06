@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://senna-lin.github.io/kaohsiung-land-archive-platform-demo/project-dashboard-v6/evidence-schema.json",
+  "title": "Project Dashboard v6 Evidence Manifest",
+  "type": "object",
+  "required": ["schemaVersion", "line", "repository", "sourceHeadSha", "generatedAt", "calibrationStatus", "metrics", "features", "milestones", "risks", "nextGate"],
+  "properties": {
+    "schemaVersion": {"const": "1.0"},
+    "line": {"enum": ["codex", "antigravity"]},
+    "repository": {"type": "string", "minLength": 1},
+    "sourceHeadSha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "generatedAt": {"type": "string", "format": "date-time"},
+    "calibrationStatus": {"enum": ["needs-calibration", "calibrated"]},
+    "summary": {"type": "string"},
+    "metrics": {
+      "type": "object",
+      "required": ["featureCoverage", "backendImplementation", "dataAccess", "automatedTests", "ciCd", "governanceEvidence"],
+      "additionalProperties": false,
+      "properties": {
+        "featureCoverage": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "backendImplementation": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "dataAccess": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "automatedTests": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "ciCd": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+        "governanceEvidence": {"type": ["number", "null"], "minimum": 0, "maximum": 100}
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "progress", "status", "evidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "progress": {"type": ["number", "null"], "minimum": 0, "maximum": 100},
+          "status": {"enum": ["completed", "partial", "not-started", "blocked", "needs-revalidation", "unknown"]},
+          "evidence": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "milestones": {"type": "array"},
+    "risks": {"type": "array"},
+    "nextGate": {"type": "string"}
+  },
+  "additionalProperties": true
+}
