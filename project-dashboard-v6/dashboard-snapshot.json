@@ -1,0 +1,138 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-08-06T23:38:08.049Z",
+  "source": "github-actions-sanitized-private-evidence",
+  "publicSafety": {
+    "rawManifestIncluded": false,
+    "commitMessagesIncluded": false,
+    "prBodiesIncluded": false,
+    "secretsIncluded": false
+  },
+  "lines": [
+    {
+      "key": "codex",
+      "label": "Codex Windows",
+      "head": "45890393f113f27fea58c2fe5f3b90775b9a800a",
+      "openPrCount": 0,
+      "ci": "success",
+      "ciUpdatedAt": "2026-08-06T22:56:09Z",
+      "evidence": {
+        "state": "FRESH",
+        "freshnessReason": "manifest-only-delta",
+        "calibrated": true
+      },
+      "metrics": {
+        "featureCoverage": 50,
+        "backendImplementation": 50,
+        "dataAccess": 25,
+        "automatedTests": 75,
+        "ciCd": 50,
+        "governanceEvidence": 100
+      },
+      "features": [
+        {
+          "id": "file-search",
+          "name": "一般檔案查詢",
+          "progress": 50,
+          "status": "in-progress",
+          "evidenceCount": 3
+        },
+        {
+          "id": "database-integration",
+          "name": "正式資料庫整合",
+          "progress": 25,
+          "status": "governed-not-executed",
+          "evidenceCount": 2
+        },
+        {
+          "id": "automated-tests",
+          "name": "自動化測試",
+          "progress": 75,
+          "status": "strong",
+          "evidenceCount": 3
+        },
+        {
+          "id": "governance-evidence",
+          "name": "治理與證據",
+          "progress": 100,
+          "status": "accepted-chain",
+          "evidenceCount": 2
+        }
+      ],
+      "risks": [
+        {
+          "id": "DB-INTEGRATION-NOT-EXECUTED",
+          "severity": "high",
+          "title": "Governed database integration not yet executed"
+        }
+      ],
+      "nextGate": "Complete the next authorized governed SQL Server 2019 integration gate; keep FileSearch product behavior and evidence aligned while replacing skipped integration coverage with controlled execution evidence."
+    },
+    {
+      "key": "antigravity",
+      "label": "Antigravity Mac",
+      "head": "eb2001428ffb10ab064676f4e05e6f79bf1b1c83",
+      "openPrCount": 4,
+      "ci": "success",
+      "ciUpdatedAt": "2026-08-06T23:22:59Z",
+      "evidence": {
+        "state": "FRESH",
+        "freshnessReason": "manifest-only-delta",
+        "calibrated": true
+      },
+      "metrics": {
+        "featureCoverage": 50,
+        "backendImplementation": 75,
+        "dataAccess": 75,
+        "automatedTests": 75,
+        "ciCd": 75,
+        "governanceEvidence": 75
+      },
+      "features": [
+        {
+          "id": "file-search",
+          "name": "一般檔案查詢",
+          "progress": 75,
+          "status": "integrated-readonly",
+          "evidenceCount": 4
+        },
+        {
+          "id": "apply-draft",
+          "name": "線上申請草稿",
+          "progress": 75,
+          "status": "integrated-in-progress",
+          "evidenceCount": 4
+        },
+        {
+          "id": "database-integration",
+          "name": "正式資料庫整合",
+          "progress": 75,
+          "status": "read-only-validated",
+          "evidenceCount": 3
+        },
+        {
+          "id": "automated-tests",
+          "name": "自動化測試",
+          "progress": 75,
+          "status": "strong",
+          "evidenceCount": 2
+        },
+        {
+          "id": "governance-evidence",
+          "name": "治理與證據",
+          "progress": 75,
+          "status": "strong-with-open-gate",
+          "evidenceCount": 3
+        }
+      ],
+      "risks": [
+        {
+          "id": "A2-03-AUTHORITY-GAP",
+          "severity": "high",
+          "title": "A2-03 exact editable field contract remains unresolved"
+        }
+      ],
+      "nextGate": "Resolve the A2-03 Exact Field Contract governance dependency before extending Apply Draft lifecycle beyond the already merged A2-02 integration."
+    }
+  ]
+}

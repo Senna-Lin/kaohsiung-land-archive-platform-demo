@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#07101c">
 <link rel="icon" href="../project-dashboard-v5/favicon.svg">
-<title>Project Dashboard v6｜Evidence Live</title>
+<title>Project Dashboard v6｜Evidence Snapshot</title>
 <style>
-:root{--bg:#06101d;--panel:#102036;--panel2:#172d48;--line:#294663;--text:#eef6ff;--muted:#9db2ca;--blue:#5ba7ff;--cyan:#46d7df;--green:#54d38a;--amber:#f4c95d;--red:#ff7777}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Noto Sans TC",system-ui,-apple-system,sans-serif}.wrap{max-width:1500px;margin:auto;padding:22px}.top,.row,.status{display:flex;justify-content:space-between;align-items:center;gap:12px}.top{margin-bottom:18px}h1{margin:0;font-size:clamp(28px,4vw,44px)}h2{font-size:18px}.sub,.muted{color:var(--muted)}button{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:10px;font-weight:800;cursor:pointer}.primary{background:#245fa8}.grid{display:grid;gap:14px}.kpis{grid-template-columns:repeat(5,1fr)}.two{grid-template-columns:1fr 1fr}.card{background:linear-gradient(180deg,#142942,#0b192b);border:1px solid var(--line);border-radius:16px;padding:18px}.label{font-size:12px;color:var(--muted)}.value{font-size:30px;font-weight:900;margin:6px 0}.ok{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--red)}.status,.row{padding:10px 0;border-bottom:1px solid #203a55}.badge{padding:4px 8px;border:1px solid var(--line);border-radius:999px;font-size:10px;font-weight:900}.table{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:800px}th,td{padding:10px;border-bottom:1px solid #203a55;text-align:left;font-size:12px}th{background:#172f4a}.bar{height:10px;border-radius:999px;background:#071421;overflow:hidden;border:1px solid var(--line)}.fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan))}.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.dialog{max-width:620px;width:100%}.dialog input{width:100%;padding:12px;background:#07101c;color:#fff;border:1px solid var(--line);border-radius:9px;margin:12px 0}.footer{text-align:center;color:var(--muted);font-size:11px;margin:20px}@media(max-width:1000px){.kpis{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}@media(max-width:600px){.kpis{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
+:root{--bg:#06101d;--panel:#102036;--panel2:#172d48;--line:#294663;--text:#eef6ff;--muted:#9db2ca;--blue:#5ba7ff;--green:#54d38a;--amber:#f4c95d;--red:#ff7777}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,"Noto Sans TC",system-ui,-apple-system,sans-serif}.wrap{max-width:1500px;margin:auto;padding:22px}.top,.row,.status{display:flex;justify-content:space-between;align-items:center;gap:12px}.top{margin-bottom:18px}h1{margin:0;font-size:clamp(28px,4vw,44px)}h2{font-size:18px}.sub,.muted{color:var(--muted)}button{border:1px solid var(--line);background:var(--panel2);color:var(--text);padding:9px 13px;border-radius:10px;font-weight:800;cursor:pointer}.grid{display:grid;gap:14px}.kpis{grid-template-columns:repeat(5,1fr)}.two{grid-template-columns:1fr 1fr}.card{background:linear-gradient(180deg,#142942,#0b192b);border:1px solid var(--line);border-radius:16px;padding:18px}.label{font-size:12px;color:var(--muted)}.value{font-size:30px;font-weight:900;margin:6px 0}.ok{color:var(--green)}.warn{color:var(--amber)}.bad{color:var(--red)}.status,.row{padding:10px 0;border-bottom:1px solid #203a55}.badge{padding:4px 8px;border:1px solid var(--line);border-radius:999px;font-size:10px;font-weight:900}.table{overflow:auto;border:1px solid var(--line);border-radius:12px}table{border-collapse:collapse;width:100%;min-width:800px}th,td{padding:10px;border-bottom:1px solid #203a55;text-align:left;font-size:12px}th{background:#172f4a}.footer{text-align:center;color:var(--muted);font-size:11px;margin:20px}@media(max-width:1000px){.kpis{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}@media(max-width:600px){.kpis{grid-template-columns:1fr}.top{align-items:flex-start;flex-direction:column}}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="top"><div><div class="muted">KAOHSIUNG LAND ARCHIVE PLATFORM</div><h1>Project Dashboard v6</h1><div class="sub">Evidence-driven｜不再使用靜態完成度冒充即時進度</div></div><div><button id="refresh">重新整理</button> <button class="primary" id="connect">連線 GitHub</button></div></header>
+<header class="top"><div><div class="muted">KAOHSIUNG LAND ARCHIVE PLATFORM</div><h1>Project Dashboard v6</h1><div class="sub">Evidence-driven｜GitHub Actions 自動產生去敏公開 Snapshot</div><div id="snapshotStatus" class="muted" style="margin-top:6px">載入中…</div></div><div><button id="refresh">重新整理資料</button></div></header>
 <section class="grid kpis">
 <article class="card"><div class="label">共同完成度</div><div class="value" id="common">—</div><div class="muted">僅使用已校準證據</div></article>
-<article class="card"><div class="label">Codex Score</div><div class="value" id="codexScore">—</div><div class="muted" id="codexEvidence">未連線</div></article>
-<article class="card"><div class="label">Antigravity Score</div><div class="value" id="antScore">—</div><div class="muted" id="antEvidence">未連線</div></article>
-<article class="card"><div class="label">高風險</div><div class="value bad" id="riskCount">—</div><div class="muted">由證據檔提供</div></article>
+<article class="card"><div class="label">Codex Score</div><div class="value" id="codexScore">—</div><div class="muted" id="codexEvidence">載入中</div></article>
+<article class="card"><div class="label">Antigravity Score</div><div class="value" id="antScore">—</div><div class="muted" id="antEvidence">載入中</div></article>
+<article class="card"><div class="label">高風險</div><div class="value bad" id="riskCount">—</div><div class="muted">僅公開等級與標題</div></article>
 <article class="card"><div class="label">距正式截止</div><div class="value" id="days">—</div><div class="muted">2026-10-15</div></article>
 </section>
 <section class="grid two" style="margin-top:14px">
@@ -26,12 +26,11 @@
 </section>
 <section class="grid two" style="margin-top:14px">
 <article class="card"><h2>Benchmark Metrics</h2><div class="table"><table><thead><tr><th>指標</th><th>權重</th><th>Codex</th><th>Antigravity</th></tr></thead><tbody id="metricBody"></tbody></table></div></article>
-<article class="card"><h2>最近 GitHub 活動</h2><div id="activity"></div></article>
+<article class="card"><h2>Snapshot 狀態</h2><div id="activity"></div></article>
 </section>
 <article class="card" style="margin-top:14px"><h2>功能證據地圖</h2><div class="table"><table><thead><tr><th>功能</th><th>Codex</th><th>Antigravity</th><th>證據狀態</th></tr></thead><tbody id="featureBody"></tbody></table></div></article>
-<article class="card" style="margin-top:14px"><h2>風險</h2><div id="risks"></div></article>
-<div class="footer">Project Dashboard v6 · Manifest HEAD 不等於 Repository HEAD 時，數字一律視為失效並停止計分。</div>
+<article class="card" style="margin-top:14px"><h2>風險摘要</h2><div id="risks"></div></article>
+<div class="footer">Project Dashboard v6 · 私有 Repository 由部署工作讀取；瀏覽器不接收 GitHub Token，也不直接存取 Private Repo。</div>
 </div>
-<div class="modal" id="modal"><div class="card dialog"><h2>連線 GitHub 私有 Repository</h2><p class="sub">Token 只保存在目前瀏覽器 sessionStorage。建議僅授予 Metadata、Contents、Pull requests、Actions Read。</p><input type="password" id="token" autocomplete="off" placeholder="Fine-grained token"><button id="cancel">取消</button> <button class="primary" id="save">連線</button></div></div>
 <script src="./dashboard.js"></script>
 </body></html>
