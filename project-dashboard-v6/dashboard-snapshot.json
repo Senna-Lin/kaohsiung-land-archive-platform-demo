@@ -1,6 +1,6 @@
 {
-  "schemaVersion": "2.0",
-  "generatedAt": "2026-08-31T15:44:50.968Z",
+  "schemaVersion": "2.1",
+  "generatedAt": "2026-08-31T15:49:11.625Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2",
@@ -8,17 +8,18 @@
     "inputs": [
       "complete project catalog",
       "reconciled merged-PR anchors",
-      "new merged PR titles",
+      "explicit customerStage declarations verified by merged PR",
       "main CI results",
       "evidence freshness"
     ],
     "missingEvidenceIsZero": false,
+    "strictStageAuthority": true,
     "failClosedOnStaleEvidence": true
   },
   "prototype": {
     "status": "CONTROLLED",
     "freezeCommit": "eba2afa",
-    "dashboardHead": "4f798e9"
+    "dashboardHead": "29f828a"
   },
   "publicSafety": {
     "rawManifestIncluded": false,
@@ -42,14 +43,15 @@
       },
       "progressEngine": {
         "mode": "customer-progress-v2",
+        "strictStageAuthority": true,
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
         "mergedPrCount": 45
       },
-      "engineeringProgress": 52,
+      "engineeringProgress": 51,
       "evidenceCoverage": 100,
-      "integrationCompleteCount": 8,
-      "buildingCount": 18,
+      "integrationCompleteCount": 7,
+      "buildingCount": 19,
       "plannedCount": 7,
       "notStartedCount": 0,
       "categories": [
@@ -91,7 +93,7 @@
         {
           "id": "release",
           "name": "驗收與上線準備",
-          "progress": 90
+          "progress": 60
         }
       ],
       "features": [
@@ -386,8 +388,8 @@
         {
           "id": "uat-release",
           "name": "驗收與上線準備",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": 60,
+          "stageLabel": "主要功能已完成",
           "status": "上線與驗收準備已建立，客戶驗收及正式部署尚未執行",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -438,21 +440,22 @@
       },
       "progressEngine": {
         "mode": "customer-progress-v2",
+        "strictStageAuthority": true,
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
         "mergedPrCount": 72
       },
-      "engineeringProgress": 51,
+      "engineeringProgress": 49,
       "evidenceCoverage": 100,
       "integrationCompleteCount": 12,
-      "buildingCount": 5,
-      "plannedCount": 16,
+      "buildingCount": 4,
+      "plannedCount": 17,
       "notStartedCount": 0,
       "categories": [
         {
           "id": "foundation",
           "name": "系統基礎與登入安全",
-          "progress": 84
+          "progress": 76
         },
         {
           "id": "filesearch",
@@ -477,7 +480,7 @@
         {
           "id": "admin",
           "name": "報表、治理與後台管理",
-          "progress": 38
+          "progress": 36
         },
         {
           "id": "quality",
@@ -487,7 +490,7 @@
         {
           "id": "release",
           "name": "驗收與上線準備",
-          "progress": 75
+          "progress": 60
         }
       ],
       "features": [
@@ -512,11 +515,11 @@
         {
           "id": "rbac",
           "name": "角色與權限管理",
-          "progress": 60,
-          "stageLabel": "主要功能已完成",
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
           "status": "角色與權限需求已確認，正式角色權限模組尚未進入實作",
           "evidenceState": "已確認",
-          "evidenceCount": 3
+          "evidenceCount": 2
         },
         {
           "id": "session-security",
@@ -746,8 +749,8 @@
         {
           "id": "anomaly-monitoring",
           "name": "異常監控",
-          "progress": 60,
-          "stageLabel": "主要功能已完成",
+          "progress": 40,
+          "stageLabel": "建置中",
           "status": "登入異常與速率限制已完成，完整異常監控仍待擴充",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -782,8 +785,8 @@
         {
           "id": "uat-release",
           "name": "驗收與上線準備",
-          "progress": 75,
-          "stageLabel": "自動測試已完成",
+          "progress": 60,
+          "stageLabel": "主要功能已完成",
           "status": "部署文件與測試環境準備已完成，正式上線與客戶驗收尚未開始",
           "evidenceState": "已確認",
           "evidenceCount": 3
