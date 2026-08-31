@@ -1,15 +1,15 @@
 {
-  "schemaVersion":"1.0",
+  "schemaVersion":"2.0",
   "deadline":"2026-10-15T23:59:59+08:00",
   "prototype":{"freezeCommit":"eba2afa21cf469519cc3166b46ba39d7b2bfc8d7","status":"CONTROLLED"},
   "phases":[
-    {"id":"foundation","name":"系統基礎／Authentication／RBAC","featureIds":["platform-foundation","authentication","rbac","session-security","audit-foundation"]},
-    {"id":"filesearch","name":"FileSearch 正式化","featureIds":["file-search","database-integration"]},
-    {"id":"images","name":"Viewer／三科影像","featureIds":["viewer","land-use-images","land-rights-images","expropriation-images"]},
-    {"id":"application","name":"Application Flow","featureIds":["apply-draft","apply-submit","application-state-machine","review","issue-files","return-files"]},
-    {"id":"circulation","name":"調閱監控／期限","featureIds":["circulation-monitor","due-warning"]},
-    {"id":"admin","name":"Reports／Admin／治理功能","featureIds":["confidential","inventory","reports","document-import","user-management","role-management","system-parameters","email-notification","audit-log","anomaly-monitoring","forgot-password"]},
-    {"id":"quality","name":"Security／Quality／Evidence","featureIds":["automated-tests","governance-evidence"]},
-    {"id":"release","name":"UAT／Deployment","featureIds":["uat-release"]}
+    {"id":"foundation","name":"系統基礎與登入安全","featureIds":["platform-foundation","authentication","rbac","session-security","audit-foundation"]},
+    {"id":"filesearch","name":"一般檔案查詢與資料庫","featureIds":["file-search","database-integration"]},
+    {"id":"images","name":"PDF／影像與三科查詢","featureIds":["viewer","land-use-images","land-rights-images","expropriation-images"]},
+    {"id":"application","name":"申請、審核、給卷與還卷","featureIds":["apply-draft","apply-submit","application-state-machine","review","issue-files","return-files"]},
+    {"id":"circulation","name":"調閱監控與期限管理","featureIds":["circulation-monitor","due-warning"]},
+    {"id":"admin","name":"報表、治理與後台管理","featureIds":["confidential","inventory","reports","document-import","user-management","role-management","system-parameters","email-notification","audit-log","anomaly-monitoring","forgot-password"]},
+    {"id":"quality","name":"測試與驗證紀錄","featureIds":["automated-tests","governance-evidence"]},
+    {"id":"release","name":"驗收與上線準備","featureIds":["uat-release"]}
   ]
 }

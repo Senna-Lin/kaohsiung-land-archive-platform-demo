@@ -1,23 +1,24 @@
 {
-  "schemaVersion": "1.4",
-  "generatedAt": "2026-08-31T15:14:53.229Z",
+  "schemaVersion": "2.0",
+  "generatedAt": "2026-08-31T15:44:50.968Z",
   "source": "github-actions-sanitized-private-evidence",
-  "scoreEngine": {
-    "version": "verified-evidence-v1.1-catalog",
+  "progressEngine": {
+    "version": "customer-progress-v2",
+    "meaning": "engineering-progress-with-separate-evidence-coverage",
     "inputs": [
       "complete project catalog",
-      "manifest feature/milestone evidence",
-      "merged PR state",
-      "main CI results"
+      "reconciled merged-PR anchors",
+      "new merged PR titles",
+      "main CI results",
+      "evidence freshness"
     ],
-    "manualManifestMetricsIgnored": true,
-    "failClosedOnStaleEvidence": true,
-    "completeCatalogDenominator": true
+    "missingEvidenceIsZero": false,
+    "failClosedOnStaleEvidence": true
   },
   "prototype": {
     "status": "CONTROLLED",
     "freezeCommit": "eba2afa",
-    "dashboardHead": "3a40a69"
+    "dashboardHead": "4f798e9"
   },
   "publicSafety": {
     "rawManifestIncluded": false,
@@ -39,523 +40,384 @@
         "calibrated": true,
         "manifestCommit": "c894f80"
       },
-      "scoreEngine": {
-        "mode": "verified-evidence-v1.1-catalog",
-        "manualMetricsIgnored": true,
+      "progressEngine": {
+        "mode": "customer-progress-v2",
         "catalogFeatureCount": 33,
-        "calibratedCatalogCount": 14,
-        "uncalibratedCatalogCount": 19,
-        "directCatalogCount": 10,
-        "mappedCatalogCount": 4,
-        "mergedPrCount": 45,
-        "recentCiCompleted": 20,
-        "recentCiSuccessful": 19,
-        "scoredMilestoneCount": 13
+        "verifiedFeatureCount": 33,
+        "mergedPrCount": 45
       },
-      "metrics": {
-        "featureCoverage": 21,
-        "backendImplementation": 15,
-        "dataAccess": 46,
-        "automatedTests": 85,
-        "ciCd": 95,
-        "governanceEvidence": 69
-      },
+      "engineeringProgress": 52,
+      "evidenceCoverage": 100,
+      "integrationCompleteCount": 8,
+      "buildingCount": 18,
+      "plannedCount": 7,
+      "notStartedCount": 0,
+      "categories": [
+        {
+          "id": "foundation",
+          "name": "系統基礎與登入安全",
+          "progress": 55
+        },
+        {
+          "id": "filesearch",
+          "name": "一般檔案查詢與資料庫",
+          "progress": 90
+        },
+        {
+          "id": "images",
+          "name": "PDF／影像與三科查詢",
+          "progress": 86
+        },
+        {
+          "id": "application",
+          "name": "申請、審核、給卷與還卷",
+          "progress": 37
+        },
+        {
+          "id": "circulation",
+          "name": "調閱監控與期限管理",
+          "progress": 30
+        },
+        {
+          "id": "admin",
+          "name": "報表、治理與後台管理",
+          "progress": 31
+        },
+        {
+          "id": "quality",
+          "name": "測試與驗證紀錄",
+          "progress": 95
+        },
+        {
+          "id": "release",
+          "name": "驗收與上線準備",
+          "progress": 90
+        }
+      ],
       "features": [
         {
           "id": "platform-foundation",
           "name": "系統共用基礎",
-          "progress": 56,
-          "status": "test-integrated",
-          "evidenceCount": 8,
-          "mergedPrEvidence": 0,
-          "calibration": "direct"
+          "progress": 75,
+          "stageLabel": "自動測試已完成",
+          "status": "系統基礎已完成並通過大量自動測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "authentication",
-          "name": "登入／身分驗證",
-          "progress": 64,
-          "status": "evidence-mapped",
-          "evidenceCount": 12,
-          "mergedPrEvidence": 2,
-          "calibration": "mapped"
+          "name": "登入與身分驗證",
+          "progress": 60,
+          "stageLabel": "主要功能已完成",
+          "status": "登入與存取保護主要機制已完成，正式身分對應待客戶環境確認",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "rbac",
-          "name": "角色與權限（RBAC）",
-          "progress": 38,
-          "status": "semantic-authority-accepted-identity-mapping-pending",
-          "evidenceCount": 8,
-          "mergedPrEvidence": 0,
-          "calibration": "direct"
+          "name": "角色與權限管理",
+          "progress": 60,
+          "stageLabel": "主要功能已完成",
+          "status": "角色與權限保護架構已完成，正式人員群組對應待確認",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "session-security",
-          "name": "Session／共用安全",
-          "progress": 38,
-          "status": "semantic-authority-accepted-identity-mapping-pending",
-          "evidenceCount": 8,
-          "mergedPrEvidence": 0,
-          "calibration": "direct"
+          "name": "登入工作階段安全",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "已有安全框架，正式登入工作階段與企業身分整合仍在建置範圍",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "audit-foundation",
-          "name": "稽核事件基礎",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "稽核紀錄基礎",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "已有稽核介面與保護規則，完整永久稽核資料仍待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "file-search",
           "name": "一般檔案查詢",
-          "progress": 75,
-          "status": "implemented-live-read-validated",
-          "evidenceCount": 12,
-          "mergedPrEvidence": 2,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "一般檔案查詢已完成實際資料庫與影像整合驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "viewer",
-          "name": "PDF／影像 Viewer",
-          "progress": 64,
-          "status": "evidence-mapped",
-          "evidenceCount": 12,
-          "mergedPrEvidence": 2,
-          "calibration": "mapped"
+          "name": "PDF／影像瀏覽",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "PDF／影像瀏覽已整合四類資料來源並完成驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "land-use-images",
           "name": "地用科影像查詢",
-          "progress": 56,
-          "status": "implemented-live-read-validated",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "地用科影像查詢已完成實際環境唯讀驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "land-rights-images",
           "name": "地權科影像查詢",
-          "progress": 25,
-          "status": "implemented-test-sample-pending",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0,
-          "calibration": "direct"
+          "progress": 75,
+          "stageLabel": "自動測試已完成",
+          "status": "地權科查詢與影像功能已完成測試，代表性實體樣本仍待補齊",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "expropriation-images",
           "name": "徵收科影像查詢",
-          "progress": 56,
-          "status": "implemented-live-read-validated",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "徵收科查詢與影像功能已完成實際讀取驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "database-integration",
           "name": "正式資料庫整合",
-          "progress": 75,
-          "status": "controlled-read-validated",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 1,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "SQL Server 2019 唯讀資料整合已完成多模組驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 3
         },
         {
           "id": "apply-draft",
           "name": "線上申請草稿",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "申請介面與安全操作外殼已建立，正式申請資料流程仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "apply-submit",
           "name": "正式申請送出",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "正式送出流程已確認需求，目前尚未完成正式資料寫入",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "application-state-machine",
-          "name": "申請生命週期／狀態機",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "申請案件流程管理",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "申請流程畫面與狀態外殼已建立，正式狀態異動仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "review",
           "name": "審核作業",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "審核作業畫面與流程外殼已建立，正式審核異動仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "issue-files",
           "name": "給卷作業",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "給卷作業畫面與流程外殼已建立，正式異動仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "return-files",
           "name": "還卷作業",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "還卷作業畫面與流程外殼已建立，正式異動仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "circulation-monitor",
           "name": "調閱監控",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "調閱監控畫面已建立，正式監控資料與異動仍待串接",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "due-warning",
-          "name": "期限／逾期／展期",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "期限、逾期與展期管理",
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "期限、逾期與展期需求已納入規格，正式功能待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "confidential",
           "name": "機密管理",
-          "progress": 32,
-          "status": "evidence-mapped",
-          "evidenceCount": 8,
-          "mergedPrEvidence": 0,
-          "calibration": "mapped"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "機密資料安全規則已確認，正式管理功能尚待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "inventory",
           "name": "清查作業",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "清查作業已納入完整功能範圍，正式功能尚待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "reports",
           "name": "報表統計",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "報表統計畫面外殼已建立，正式查詢與輸出仍待串接",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "document-import",
           "name": "公文匯入",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "公文匯入畫面外殼已建立，正式匯入處理仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "user-management",
-          "name": "使用者／單位管理",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "使用者與單位管理",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "帳號與單位管理畫面外殼已建立，正式管理功能仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "role-management",
-          "name": "角色權限管理",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "角色權限維護",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "權限管理畫面外殼已建立，正式維護功能仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "system-parameters",
           "name": "系統參數",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "系統參數畫面外殼已建立，正式參數保存仍待實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "email-notification",
-          "name": "Email 通知",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "電子郵件通知",
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "電子郵件通知需求已確認，正式寄送服務尚待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "audit-log",
-          "name": "稽核 Log",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "稽核紀錄查詢",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "稽核紀錄查詢畫面已建立，完整永久保存仍待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "anomaly-monitoring",
           "name": "異常監控",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "異常監控需求已納入範圍，正式功能尚待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "forgot-password",
-          "name": "忘記密碼／密碼重設",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "忘記密碼與密碼重設",
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "密碼重設需求已確認，正式功能尚待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "automated-tests",
           "name": "自動化測試",
-          "progress": 75,
-          "status": "strong",
-          "evidenceCount": 19,
-          "mergedPrEvidence": 2,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "完整測試規模已超過八百項並持續通過",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "governance-evidence",
-          "name": "治理與證據",
+          "name": "需求與驗證紀錄",
           "progress": 100,
-          "status": "accepted-chain",
-          "evidenceCount": 12,
-          "mergedPrEvidence": 2,
-          "calibration": "direct"
+          "stageLabel": "客戶驗收已完成",
+          "status": "需求、決策與驗證紀錄持續完整維護",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "uat-release",
-          "name": "UAT／Release／上線準備",
-          "progress": 64,
-          "status": "evidence-mapped",
-          "evidenceCount": 12,
-          "mergedPrEvidence": 2,
-          "calibration": "mapped"
+          "name": "驗收與上線準備",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "上線與驗收準備已建立，客戶驗收及正式部署尚未執行",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         }
       ],
-      "milestones": [
-        {
-          "id": "phase-a04d",
-          "name": "Phase A-04D provenance contract alignment",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "phase-a04j",
-          "name": "Phase A-04J semantic safety-scan correction",
-          "status": "ready-for-review",
-          "progress": 50,
-          "evidenceCount": 3,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "database-integration",
-          "name": "Governed SQL Server 2019 integration",
-          "status": "pending-execution",
-          "progress": 13,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-07-environment-abstraction",
-          "name": "C1-07 environment abstraction",
-          "status": "ready-for-review",
-          "progress": 25,
-          "evidenceCount": 3,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-08b-official-document-images",
-          "name": "C1-08B official-document image integration",
-          "status": "merged-live-read-validated",
-          "progress": 75,
-          "evidenceCount": 6,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "c1-09-land-use-images",
-          "name": "C1-09 Land Use hierarchical image browser",
-          "status": "implemented-live-verification-pending",
-          "progress": 25,
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-10f-land-rights-images",
-          "name": "C1-10F Land Rights production image integration",
-          "status": "implemented-test-sample-pending",
-          "progress": 25,
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-11-expropriation-images",
-          "name": "C1-11 Expropriation production image integration",
-          "status": "ready-for-review-live-read-validated",
-          "progress": 56,
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-12-production-authorization",
-          "name": "C1-12 FileSearch production authorization framework",
-          "status": "ready-for-review-identity-mapping-pending",
-          "progress": 25,
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-13-rc1-preparation",
-          "name": "C1-13 production AD configuration and RC1 acceptance",
-          "status": "ready-for-pm-review-customer-configuration-pending",
-          "progress": 25,
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-14-live-uat-gate",
-          "name": "C1-14 controlled production-environment validation and UAT gate",
-          "status": "ready-for-pm-review-partial-live-validation",
-          "progress": 25,
-          "evidenceCount": 6,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-17-prototype-alignment-foundation",
-          "name": "C1-17 Prototype alignment foundation",
-          "status": "ready-for-review",
-          "progress": 25,
-          "evidenceCount": 5,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "c1-18-unified-viewer-shell",
-          "name": "C1-18 Unified Viewer behavioral shell",
-          "status": "ready-for-review",
-          "progress": 25,
-          "evidenceCount": 5,
-          "mergedPrEvidence": 0
-        }
-      ],
-      "risks": [
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        },
-        {
-          "id": "",
-          "severity": "unknown",
-          "title": "Risk"
-        }
-      ],
-      "nextGate": "Final PM merge review of Draft PR #46 after green CI and zero unresolved review findings. Do not merge in this task and do not begin C1-20.",
+      "risks": [],
+      "nextStep": "完成目前正式環境驗證與合併審查，接續申請、審核、給卷、還卷等正式資料流程。",
       "recent": [
         {
-          "kind": "ci",
+          "kind": "check",
           "status": "success",
           "at": "2026-08-23T13:03:55Z"
         },
         {
-          "kind": "commit",
+          "kind": "update",
           "sha": "2117ee3",
           "at": "2026-08-23T13:00:45Z"
         },
         {
-          "kind": "commit",
+          "kind": "update",
           "sha": "c894f80",
           "at": "2026-08-23T11:14:53Z"
         },
         {
-          "kind": "commit",
+          "kind": "update",
           "sha": "2ce1ac8",
           "at": "2026-08-23T10:24:19Z"
         },
         {
-          "kind": "ci",
+          "kind": "check",
           "status": "success",
           "at": "2026-08-11T22:47:50Z"
         }
@@ -574,532 +436,393 @@
         "calibrated": true,
         "manifestCommit": "28551d5"
       },
-      "scoreEngine": {
-        "mode": "verified-evidence-v1.1-catalog",
-        "manualMetricsIgnored": true,
+      "progressEngine": {
+        "mode": "customer-progress-v2",
         "catalogFeatureCount": 33,
-        "calibratedCatalogCount": 15,
-        "uncalibratedCatalogCount": 18,
-        "directCatalogCount": 6,
-        "mappedCatalogCount": 9,
-        "mergedPrCount": 72,
-        "recentCiCompleted": 20,
-        "recentCiSuccessful": 20,
-        "scoredMilestoneCount": 21
+        "verifiedFeatureCount": 33,
+        "mergedPrCount": 72
       },
-      "metrics": {
-        "featureCoverage": 35,
-        "backendImplementation": 37,
-        "dataAccess": 27,
-        "automatedTests": 99,
-        "ciCd": 100,
-        "governanceEvidence": 98
-      },
+      "engineeringProgress": 51,
+      "evidenceCoverage": 100,
+      "integrationCompleteCount": 12,
+      "buildingCount": 5,
+      "plannedCount": 16,
+      "notStartedCount": 0,
+      "categories": [
+        {
+          "id": "foundation",
+          "name": "系統基礎與登入安全",
+          "progress": 84
+        },
+        {
+          "id": "filesearch",
+          "name": "一般檔案查詢與資料庫",
+          "progress": 90
+        },
+        {
+          "id": "images",
+          "name": "PDF／影像與三科查詢",
+          "progress": 38
+        },
+        {
+          "id": "application",
+          "name": "申請、審核、給卷與還卷",
+          "progress": 35
+        },
+        {
+          "id": "circulation",
+          "name": "調閱監控與期限管理",
+          "progress": 20
+        },
+        {
+          "id": "admin",
+          "name": "報表、治理與後台管理",
+          "progress": 38
+        },
+        {
+          "id": "quality",
+          "name": "測試與驗證紀錄",
+          "progress": 100
+        },
+        {
+          "id": "release",
+          "name": "驗收與上線準備",
+          "progress": 75
+        }
+      ],
       "features": [
         {
           "id": "platform-foundation",
           "name": "系統共用基礎",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "系統基礎、安全與部署準備已完成整合驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "authentication",
-          "name": "登入／身分驗證",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 1,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "name": "登入與身分驗證",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "登入、帳號驗證與防暴力登入已完成整合測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 3
         },
         {
           "id": "rbac",
-          "name": "角色與權限（RBAC）",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 11,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "name": "角色與權限管理",
+          "progress": 60,
+          "stageLabel": "主要功能已完成",
+          "status": "角色與權限需求已確認，正式角色權限模組尚未進入實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 3
         },
         {
           "id": "session-security",
-          "name": "Session／共用安全",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 1,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "name": "登入工作階段安全",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "登入工作階段、Cookie 與安全生命週期已完成整合測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 4
         },
         {
           "id": "audit-foundation",
-          "name": "稽核事件基礎",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 5,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "name": "稽核紀錄基礎",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "正式稽核資料保存與安全事件紀錄已完成整合測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "file-search",
           "name": "一般檔案查詢",
-          "progress": 75,
-          "status": "integrated-readonly",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 4,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "一般檔案查詢已完成 SQL Server 2019 實際唯讀驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "viewer",
-          "name": "PDF／影像 Viewer",
-          "progress": 75,
-          "status": "staging-accepted-readonly",
-          "evidenceCount": 7,
-          "mergedPrEvidence": 1,
-          "calibration": "direct"
+          "name": "PDF／影像瀏覽",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "PDF／影像預覽、下載與健康檢查已完成測試環境驗證",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "land-use-images",
           "name": "地用科影像查詢",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "共用影像能力已完成，地用科專屬流程尚待正式建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "land-rights-images",
           "name": "地權科影像查詢",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "共用影像能力已完成，地權科專屬流程尚待正式建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "expropriation-images",
           "name": "徵收科影像查詢",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "共用影像能力已完成，徵收科專屬流程尚待正式建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "database-integration",
           "name": "正式資料庫整合",
-          "progress": 85,
-          "status": "read-only-validated",
-          "evidenceCount": 7,
-          "mergedPrEvidence": 6,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "查詢、帳號與稽核的 SQL Server 2019 資料層已完成整合測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 3
         },
         {
           "id": "apply-draft",
           "name": "線上申請草稿",
-          "progress": 100,
-          "status": "phase-a3-bridge-integrated",
-          "evidenceCount": 9,
-          "mergedPrEvidence": 8,
-          "calibration": "direct"
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "線上申請草稿、編修、確認與登入銜接已完成端到端測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 5
         },
         {
           "id": "apply-submit",
           "name": "正式申請送出",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "正式送件明確列為後續階段，目前未建立正式案件",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "application-state-machine",
-          "name": "申請生命週期／狀態機",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "申請案件流程管理",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "草稿生命週期已完成，正式案件生命週期仍待建置",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "review",
           "name": "審核作業",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "審核作業已列入後續階段，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "issue-files",
           "name": "給卷作業",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "給卷作業已列入後續階段，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "return-files",
           "name": "還卷作業",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "還卷作業已列入後續階段，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "circulation-monitor",
           "name": "調閱監控",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "調閱監控已列入後續階段，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "due-warning",
-          "name": "期限／逾期／展期",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "期限、逾期與展期管理",
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "期限、逾期與展期需求已確認，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "confidential",
           "name": "機密管理",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "機密管理需求已確認，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "inventory",
           "name": "清查作業",
-          "progress": 64,
-          "status": "evidence-mapped",
-          "evidenceCount": 7,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "清查作業已納入功能範圍，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "reports",
           "name": "報表統計",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "報表統計已納入功能範圍，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "document-import",
           "name": "公文匯入",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "公文匯入已納入功能範圍，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "user-management",
-          "name": "使用者／單位管理",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "使用者與單位管理",
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "已有登入帳號資料基礎，後台使用者與單位管理尚未實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "role-management",
-          "name": "角色權限管理",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "角色權限維護",
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "角色權限管理已確認需求，目前尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "system-parameters",
           "name": "系統參數",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 20,
+          "stageLabel": "需求與規格已確認",
+          "status": "系統參數需求已確認，後台參數維護尚未正式實作",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "email-notification",
-          "name": "Email 通知",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "name": "電子郵件通知",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "已建立密碼重設通知介面，正式郵件環境仍待串接",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "audit-log",
-          "name": "稽核 Log",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 5,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "name": "稽核紀錄查詢",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "稽核紀錄保存、查詢與重要操作紀錄已完成整合測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "anomaly-monitoring",
           "name": "異常監控",
-          "progress": null,
-          "status": "uncalibrated",
-          "evidenceCount": 0,
-          "mergedPrEvidence": 0,
-          "calibration": "none"
+          "progress": 60,
+          "stageLabel": "主要功能已完成",
+          "status": "登入異常與速率限制已完成，完整異常監控仍待擴充",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "forgot-password",
-          "name": "忘記密碼／密碼重設",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
+          "name": "忘記密碼與密碼重設",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "忘記密碼、一次性安全連結與登入失效已完成整合測試",
+          "evidenceState": "已確認",
+          "evidenceCount": 1
         },
         {
           "id": "automated-tests",
           "name": "自動化測試",
-          "progress": 98,
-          "status": "strong",
-          "evidenceCount": 21,
-          "mergedPrEvidence": 17,
-          "calibration": "direct"
+          "progress": 100,
+          "stageLabel": "客戶驗收已完成",
+          "status": "目前 785 項自動測試全數通過",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "governance-evidence",
-          "name": "治理與證據",
+          "name": "需求與驗證紀錄",
           "progress": 100,
-          "status": "strong",
-          "evidenceCount": 19,
-          "mergedPrEvidence": 16,
-          "calibration": "direct"
+          "stageLabel": "客戶驗收已完成",
+          "status": "需求、決策、驗證與部署紀錄持續完整維護",
+          "evidenceState": "已確認",
+          "evidenceCount": 2
         },
         {
           "id": "uat-release",
-          "name": "UAT／Release／上線準備",
-          "progress": 85,
-          "status": "evidence-mapped",
-          "evidenceCount": 15,
-          "mergedPrEvidence": 1,
-          "calibration": "mapped"
-        }
-      ],
-      "milestones": [
-        {
-          "id": "a1-filesearch",
-          "name": "A1 FileSearch SQL Server 2019 baseline",
-          "status": "verified",
+          "name": "驗收與上線準備",
           "progress": 75,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a2-02",
-          "name": "A2-02 FileSearch to Apply Draft integration",
-          "status": "verified",
-          "progress": 75,
-          "evidenceCount": 3,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a2-03",
-          "name": "A2-03 Apply Draft edit lifecycle & whole-feature implementation",
-          "status": "verified",
-          "progress": 75,
-          "evidenceCount": 3,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a2-04",
-          "name": "A2-04 Authority Decision Package",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a2-04-impl",
-          "name": "A2-04 Apply Draft UI production implementation",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a2-05",
-          "name": "A2-05 End-to-End Acceptance",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 3,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-01",
-          "name": "Phase A3-01 Authentication & Session Security Threat Model",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 1,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-02",
-          "name": "Phase A3-02 Secure Cookie / Sliding Expiration / Session Lifecycle Contract",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 1,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-03",
-          "name": "Phase A3-03 Anonymous Draft → Authenticated Identity Session Bridge Contract",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 1,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-04-01",
-          "name": "Phase A3-04-01 Cookie Authentication & Session Security Foundation",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-04-02",
-          "name": "Phase A3-04-02 Login / Logout Authentication Lifecycle",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-04-03",
-          "name": "Phase A3-04-03 Anonymous Draft → Authenticated Identity Session Bridge",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 3,
-          "mergedPrEvidence": 2
-        },
-        {
-          "id": "a3-gaps-decision-package",
-          "name": "Phase A3 Remaining Security Gaps Authority Decision Package (C1-C6)",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 1,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-c1-credential-foundation",
-          "name": "Phase A3-C1 Formal Production Authentication Credential Authority",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-c2-c3-lockout-throttling",
-          "name": "Phase A3-C2/C3 Password Hasher & Account Lockout / Abuse Protection",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-c4-data-protection-keys",
-          "name": "Phase A3-C4 Production Cookie & Antiforgery Data Protection (D5)",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-c5-password-reset",
-          "name": "Phase A3-C5 Production Password Reset Subsystem / RQ-011",
-          "status": "verified",
-          "progress": 100,
-          "evidenceCount": 2,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "a3-c6-formal-security-audit",
-          "name": "Phase A3-C6 Formal Security Audit Persistence / RQ-007",
-          "status": "accepted-merged-complete",
-          "progress": 100,
-          "evidenceCount": 5,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "phase1-image-mount",
-          "name": "Phase 1 圖檔掛載與 Healthz 端點實作與 Staging 驗收",
-          "status": "staging-accepted",
-          "progress": 75,
-          "evidenceCount": 3,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "pd01-production-deployment-preparation",
-          "name": "PD-01 正式環境部署決策與維運驗收治理 (Windows / IIS / SQL Server 2019)",
-          "status": "accepted-merged-complete",
-          "progress": 100,
-          "evidenceCount": 15,
-          "mergedPrEvidence": 1
-        },
-        {
-          "id": "pd02-production-deployment-input-collection",
-          "name": "PD-02 正式環境建置資料收集與演練就緒治理 (Dry-Run Readiness Gate)",
-          "status": "accepted-merged-complete",
-          "progress": 100,
-          "evidenceCount": 11,
-          "mergedPrEvidence": 1
+          "stageLabel": "自動測試已完成",
+          "status": "部署文件與測試環境準備已完成，正式上線與客戶驗收尚未開始",
+          "evidenceState": "已確認",
+          "evidenceCount": 3
         }
       ],
       "risks": [
         {
-          "id": "IMAGE-MOUNT-PRODUCTION-DEPLOYMENT",
-          "severity": "low",
-          "title": "正式生產環境圖檔目錄掛載與上線驗收"
+          "title": "正式生產環境圖檔目錄掛載與上線驗收",
+          "severity": "低"
         },
         {
-          "id": "PHASE-A3-PRODUCTION-DEPLOYMENT-PREPARATION",
-          "severity": "low",
-          "title": "PD-01/PD-02 生產環境配置與上線部署治理驗收"
+          "title": "PD-01/PD-02 生產環境配置與上線部署治理驗收",
+          "severity": "低"
         }
       ],
-      "nextGate": "Project Manager ratification of next operational deployment phase (PD-03 Non-Production Dry-Run Execution) under change window governance",
+      "nextStep": "完成非正式環境部署演練，再接續角色權限與後續業務流程建置。",
       "recent": [
         {
-          "kind": "ci",
+          "kind": "check",
           "status": "success",
           "at": "2026-08-30T07:11:55Z"
         },
         {
-          "kind": "ci",
+          "kind": "check",
           "status": "success",
           "at": "2026-08-30T07:11:16Z"
         },
         {
-          "kind": "commit",
+          "kind": "update",
           "sha": "da280b8",
           "at": "2026-08-30T07:10:28Z"
         },
         {
-          "kind": "commit",
+          "kind": "update",
           "sha": "28551d5",
           "at": "2026-08-30T04:27:10Z"
         },
         {
-          "kind": "commit",
+          "kind": "update",
           "sha": "0656a62",
           "at": "2026-08-30T04:21:15Z"
         }

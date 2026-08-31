@@ -1,18 +1,11 @@
 {
-  "schemaVersion": "1.0",
+  "schemaVersion": "2.0",
+  "meaning": "engineering-progress",
   "points": [
     {
-      "at": "2026-08-31T15:00:29.836Z",
-      "codex": 67,
-      "antigravity": 91,
-      "codexHead": "2117ee3",
-      "antigravityHead": "da280b8",
-      "highRisks": 0
-    },
-    {
-      "at": "2026-08-31T15:14:53.229Z",
-      "codex": 48,
-      "antigravity": 60,
+      "at": "2026-08-31T15:44:50.968Z",
+      "codex": 52,
+      "antigravity": 51,
       "codexHead": "2117ee3",
       "antigravityHead": "da280b8",
       "highRisks": 0
