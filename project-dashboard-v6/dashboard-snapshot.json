@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1",
-  "generatedAt": "2026-08-31T15:49:11.625Z",
+  "generatedAt": "2026-08-31T16:32:33.434Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2",
@@ -19,7 +19,7 @@
   "prototype": {
     "status": "CONTROLLED",
     "freezeCommit": "eba2afa",
-    "dashboardHead": "29f828a"
+    "dashboardHead": "b153765"
   },
   "publicSafety": {
     "rawManifestIncluded": false,
