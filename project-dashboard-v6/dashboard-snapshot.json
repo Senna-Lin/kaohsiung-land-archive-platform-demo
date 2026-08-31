@@ -1,21 +1,23 @@
 {
-  "schemaVersion": "1.3",
-  "generatedAt": "2026-08-31T15:00:29.836Z",
+  "schemaVersion": "1.4",
+  "generatedAt": "2026-08-31T15:14:53.229Z",
   "source": "github-actions-sanitized-private-evidence",
   "scoreEngine": {
-    "version": "verified-evidence-v1",
+    "version": "verified-evidence-v1.1-catalog",
     "inputs": [
+      "complete project catalog",
       "manifest feature/milestone evidence",
       "merged PR state",
       "main CI results"
     ],
     "manualManifestMetricsIgnored": true,
-    "failClosedOnStaleEvidence": true
+    "failClosedOnStaleEvidence": true,
+    "completeCatalogDenominator": true
   },
   "prototype": {
     "status": "CONTROLLED",
     "freezeCommit": "eba2afa",
-    "dashboardHead": "6b0d861"
+    "dashboardHead": "3a40a69"
   },
   "publicSafety": {
     "rawManifestIncluded": false,
@@ -38,38 +40,116 @@
         "manifestCommit": "c894f80"
       },
       "scoreEngine": {
-        "mode": "verified-evidence-v1",
+        "mode": "verified-evidence-v1.1-catalog",
         "manualMetricsIgnored": true,
+        "catalogFeatureCount": 33,
+        "calibratedCatalogCount": 14,
+        "uncalibratedCatalogCount": 19,
+        "directCatalogCount": 10,
+        "mappedCatalogCount": 4,
         "mergedPrCount": 45,
         "recentCiCompleted": 20,
         "recentCiSuccessful": 19,
-        "scoredFeatureCount": 9,
         "scoredMilestoneCount": 13
       },
       "metrics": {
-        "featureCoverage": 54,
-        "backendImplementation": 64,
-        "dataAccess": 53,
+        "featureCoverage": 21,
+        "backendImplementation": 15,
+        "dataAccess": 46,
         "automatedTests": 85,
         "ciCd": 95,
         "governanceEvidence": 69
       },
       "features": [
         {
+          "id": "platform-foundation",
+          "name": "系統共用基礎",
+          "progress": 56,
+          "status": "test-integrated",
+          "evidenceCount": 8,
+          "mergedPrEvidence": 0,
+          "calibration": "direct"
+        },
+        {
+          "id": "authentication",
+          "name": "登入／身分驗證",
+          "progress": 64,
+          "status": "evidence-mapped",
+          "evidenceCount": 12,
+          "mergedPrEvidence": 2,
+          "calibration": "mapped"
+        },
+        {
+          "id": "rbac",
+          "name": "角色與權限（RBAC）",
+          "progress": 38,
+          "status": "semantic-authority-accepted-identity-mapping-pending",
+          "evidenceCount": 8,
+          "mergedPrEvidence": 0,
+          "calibration": "direct"
+        },
+        {
+          "id": "session-security",
+          "name": "Session／共用安全",
+          "progress": 38,
+          "status": "semantic-authority-accepted-identity-mapping-pending",
+          "evidenceCount": 8,
+          "mergedPrEvidence": 0,
+          "calibration": "direct"
+        },
+        {
+          "id": "audit-foundation",
+          "name": "稽核事件基礎",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
           "id": "file-search",
           "name": "一般檔案查詢",
           "progress": 75,
           "status": "implemented-live-read-validated",
           "evidenceCount": 12,
-          "mergedPrEvidence": 2
+          "mergedPrEvidence": 2,
+          "calibration": "direct"
         },
         {
-          "id": "production-authorization",
-          "name": "正式授權整合",
-          "progress": 38,
-          "status": "semantic-authority-accepted-identity-mapping-pending",
-          "evidenceCount": 8,
-          "mergedPrEvidence": 0
+          "id": "viewer",
+          "name": "PDF／影像 Viewer",
+          "progress": 64,
+          "status": "evidence-mapped",
+          "evidenceCount": 12,
+          "mergedPrEvidence": 2,
+          "calibration": "mapped"
+        },
+        {
+          "id": "land-use-images",
+          "name": "地用科影像查詢",
+          "progress": 56,
+          "status": "implemented-live-read-validated",
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0,
+          "calibration": "direct"
+        },
+        {
+          "id": "land-rights-images",
+          "name": "地權科影像查詢",
+          "progress": 25,
+          "status": "implemented-test-sample-pending",
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0,
+          "calibration": "direct"
+        },
+        {
+          "id": "expropriation-images",
+          "name": "徵收科影像查詢",
+          "progress": 56,
+          "status": "implemented-live-read-validated",
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0,
+          "calibration": "direct"
         },
         {
           "id": "database-integration",
@@ -77,7 +157,179 @@
           "progress": 75,
           "status": "controlled-read-validated",
           "evidenceCount": 4,
-          "mergedPrEvidence": 1
+          "mergedPrEvidence": 1,
+          "calibration": "direct"
+        },
+        {
+          "id": "apply-draft",
+          "name": "線上申請草稿",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "apply-submit",
+          "name": "正式申請送出",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "application-state-machine",
+          "name": "申請生命週期／狀態機",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "review",
+          "name": "審核作業",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "issue-files",
+          "name": "給卷作業",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "return-files",
+          "name": "還卷作業",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "circulation-monitor",
+          "name": "調閱監控",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "due-warning",
+          "name": "期限／逾期／展期",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "confidential",
+          "name": "機密管理",
+          "progress": 32,
+          "status": "evidence-mapped",
+          "evidenceCount": 8,
+          "mergedPrEvidence": 0,
+          "calibration": "mapped"
+        },
+        {
+          "id": "inventory",
+          "name": "清查作業",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "reports",
+          "name": "報表統計",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "document-import",
+          "name": "公文匯入",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "user-management",
+          "name": "使用者／單位管理",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "role-management",
+          "name": "角色權限管理",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "system-parameters",
+          "name": "系統參數",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "email-notification",
+          "name": "Email 通知",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "audit-log",
+          "name": "稽核 Log",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "anomaly-monitoring",
+          "name": "異常監控",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "forgot-password",
+          "name": "忘記密碼／密碼重設",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
         },
         {
           "id": "automated-tests",
@@ -85,7 +337,8 @@
           "progress": 75,
           "status": "strong",
           "evidenceCount": 19,
-          "mergedPrEvidence": 2
+          "mergedPrEvidence": 2,
+          "calibration": "direct"
         },
         {
           "id": "governance-evidence",
@@ -93,39 +346,17 @@
           "progress": 100,
           "status": "accepted-chain",
           "evidenceCount": 12,
-          "mergedPrEvidence": 2
+          "mergedPrEvidence": 2,
+          "calibration": "direct"
         },
         {
-          "id": "environment-abstraction",
-          "name": "環境抽象與外部資源設定",
-          "progress": 56,
-          "status": "test-integrated",
-          "evidenceCount": 8,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "land-use-image-browser",
-          "name": "地用科影像瀏覽",
-          "progress": 56,
-          "status": "implemented-live-read-validated",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "land-rights-image-search",
-          "name": "地權科影像查詢",
-          "progress": 25,
-          "status": "implemented-test-sample-pending",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
-        },
-        {
-          "id": "expropriation-image-search",
-          "name": "徵收科影像查詢",
-          "progress": 56,
-          "status": "implemented-live-read-validated",
-          "evidenceCount": 4,
-          "mergedPrEvidence": 0
+          "id": "uat-release",
+          "name": "UAT／Release／上線準備",
+          "progress": 64,
+          "status": "evidence-mapped",
+          "evidenceCount": 12,
+          "mergedPrEvidence": 2,
+          "calibration": "mapped"
         }
       ],
       "milestones": [
@@ -344,38 +575,116 @@
         "manifestCommit": "28551d5"
       },
       "scoreEngine": {
-        "mode": "verified-evidence-v1",
+        "mode": "verified-evidence-v1.1-catalog",
         "manualMetricsIgnored": true,
+        "catalogFeatureCount": 33,
+        "calibratedCatalogCount": 15,
+        "uncalibratedCatalogCount": 18,
+        "directCatalogCount": 6,
+        "mappedCatalogCount": 9,
         "mergedPrCount": 72,
         "recentCiCompleted": 20,
         "recentCiSuccessful": 20,
-        "scoredFeatureCount": 7,
         "scoredMilestoneCount": 21
       },
       "metrics": {
-        "featureCoverage": 87,
-        "backendImplementation": 87,
-        "dataAccess": 80,
+        "featureCoverage": 35,
+        "backendImplementation": 37,
+        "dataAccess": 27,
         "automatedTests": 99,
         "ciCd": 100,
         "governanceEvidence": 98
       },
       "features": [
         {
+          "id": "platform-foundation",
+          "name": "系統共用基礎",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
+        },
+        {
+          "id": "authentication",
+          "name": "登入／身分驗證",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 1,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
+        },
+        {
+          "id": "rbac",
+          "name": "角色與權限（RBAC）",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 11,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
+        },
+        {
+          "id": "session-security",
+          "name": "Session／共用安全",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 1,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
+        },
+        {
+          "id": "audit-foundation",
+          "name": "稽核事件基礎",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 5,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
+        },
+        {
           "id": "file-search",
           "name": "一般檔案查詢",
           "progress": 75,
           "status": "integrated-readonly",
           "evidenceCount": 4,
-          "mergedPrEvidence": 4
+          "mergedPrEvidence": 4,
+          "calibration": "direct"
         },
         {
-          "id": "apply-draft",
-          "name": "線上申請草稿 (Phase A2 & A3 Bridge)",
-          "progress": 100,
-          "status": "phase-a3-bridge-integrated",
-          "evidenceCount": 9,
-          "mergedPrEvidence": 8
+          "id": "viewer",
+          "name": "PDF／影像 Viewer",
+          "progress": 75,
+          "status": "staging-accepted-readonly",
+          "evidenceCount": 7,
+          "mergedPrEvidence": 1,
+          "calibration": "direct"
+        },
+        {
+          "id": "land-use-images",
+          "name": "地用科影像查詢",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "land-rights-images",
+          "name": "地權科影像查詢",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "expropriation-images",
+          "name": "徵收科影像查詢",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
         },
         {
           "id": "database-integration",
@@ -383,15 +692,179 @@
           "progress": 85,
           "status": "read-only-validated",
           "evidenceCount": 7,
-          "mergedPrEvidence": 6
+          "mergedPrEvidence": 6,
+          "calibration": "direct"
         },
         {
-          "id": "image-mounting",
-          "name": "圖檔掛載與存取服務 (Phase 1)",
-          "progress": 75,
-          "status": "staging-accepted-readonly",
+          "id": "apply-draft",
+          "name": "線上申請草稿",
+          "progress": 100,
+          "status": "phase-a3-bridge-integrated",
+          "evidenceCount": 9,
+          "mergedPrEvidence": 8,
+          "calibration": "direct"
+        },
+        {
+          "id": "apply-submit",
+          "name": "正式申請送出",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "application-state-machine",
+          "name": "申請生命週期／狀態機",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "review",
+          "name": "審核作業",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "issue-files",
+          "name": "給卷作業",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "return-files",
+          "name": "還卷作業",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "circulation-monitor",
+          "name": "調閱監控",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "due-warning",
+          "name": "期限／逾期／展期",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "confidential",
+          "name": "機密管理",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "inventory",
+          "name": "清查作業",
+          "progress": 64,
+          "status": "evidence-mapped",
           "evidenceCount": 7,
-          "mergedPrEvidence": 1
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
+        },
+        {
+          "id": "reports",
+          "name": "報表統計",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "document-import",
+          "name": "公文匯入",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "user-management",
+          "name": "使用者／單位管理",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "role-management",
+          "name": "角色權限管理",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "system-parameters",
+          "name": "系統參數",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "email-notification",
+          "name": "Email 通知",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "audit-log",
+          "name": "稽核 Log",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 5,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
+        },
+        {
+          "id": "anomaly-monitoring",
+          "name": "異常監控",
+          "progress": null,
+          "status": "uncalibrated",
+          "evidenceCount": 0,
+          "mergedPrEvidence": 0,
+          "calibration": "none"
+        },
+        {
+          "id": "forgot-password",
+          "name": "忘記密碼／密碼重設",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
         },
         {
           "id": "automated-tests",
@@ -399,7 +872,8 @@
           "progress": 98,
           "status": "strong",
           "evidenceCount": 21,
-          "mergedPrEvidence": 17
+          "mergedPrEvidence": 17,
+          "calibration": "direct"
         },
         {
           "id": "governance-evidence",
@@ -407,15 +881,17 @@
           "progress": 100,
           "status": "strong",
           "evidenceCount": 19,
-          "mergedPrEvidence": 16
+          "mergedPrEvidence": 16,
+          "calibration": "direct"
         },
         {
-          "id": "chatgpt-antigravity-bridge-phase3",
-          "name": "ChatGPT ↔ Antigravity Bridge Phase 3 Stage 1",
-          "progress": 99,
-          "status": "stage2-canary-single-use-authorization-merged",
-          "evidenceCount": 13,
-          "mergedPrEvidence": 4
+          "id": "uat-release",
+          "name": "UAT／Release／上線準備",
+          "progress": 85,
+          "status": "evidence-mapped",
+          "evidenceCount": 15,
+          "mergedPrEvidence": 1,
+          "calibration": "mapped"
         }
       ],
       "milestones": [
