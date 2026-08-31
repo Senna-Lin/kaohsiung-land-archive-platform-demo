@@ -1,7 +1,22 @@
 {
-  "schemaVersion": "1.0",
-  "generatedAt": "2026-08-06T23:38:08.049Z",
+  "schemaVersion": "1.3",
+  "generatedAt": "2026-08-31T15:00:29.836Z",
   "source": "github-actions-sanitized-private-evidence",
+  "scoreEngine": {
+    "version": "verified-evidence-v1",
+    "inputs": [
+      "manifest feature/milestone evidence",
+      "merged PR state",
+      "main CI results"
+    ],
+    "manualManifestMetricsIgnored": true,
+    "failClosedOnStaleEvidence": true
+  },
+  "prototype": {
+    "status": "CONTROLLED",
+    "freezeCommit": "eba2afa",
+    "dashboardHead": "6b0d861"
+  },
   "publicSafety": {
     "rawManifestIncluded": false,
     "commitMessagesIncluded": false,
@@ -12,81 +27,338 @@
     {
       "key": "codex",
       "label": "Codex Windows",
-      "head": "45890393f113f27fea58c2fe5f3b90775b9a800a",
-      "openPrCount": 0,
+      "head": "2117ee391257ef2eed16e1bc7f1e73cb94cb89b8",
+      "openPrCount": 1,
       "ci": "success",
-      "ciUpdatedAt": "2026-08-06T22:56:09Z",
+      "ciUpdatedAt": "2026-08-23T13:03:55Z",
       "evidence": {
         "state": "FRESH",
-        "freshnessReason": "manifest-only-delta",
-        "calibrated": true
+        "freshnessReason": "tree-equivalent",
+        "calibrated": true,
+        "manifestCommit": "c894f80"
+      },
+      "scoreEngine": {
+        "mode": "verified-evidence-v1",
+        "manualMetricsIgnored": true,
+        "mergedPrCount": 45,
+        "recentCiCompleted": 20,
+        "recentCiSuccessful": 19,
+        "scoredFeatureCount": 9,
+        "scoredMilestoneCount": 13
       },
       "metrics": {
-        "featureCoverage": 50,
-        "backendImplementation": 50,
-        "dataAccess": 25,
-        "automatedTests": 75,
-        "ciCd": 50,
-        "governanceEvidence": 100
+        "featureCoverage": 54,
+        "backendImplementation": 64,
+        "dataAccess": 53,
+        "automatedTests": 85,
+        "ciCd": 95,
+        "governanceEvidence": 69
       },
       "features": [
         {
           "id": "file-search",
           "name": "一般檔案查詢",
-          "progress": 50,
-          "status": "in-progress",
-          "evidenceCount": 3
+          "progress": 75,
+          "status": "implemented-live-read-validated",
+          "evidenceCount": 12,
+          "mergedPrEvidence": 2
+        },
+        {
+          "id": "production-authorization",
+          "name": "正式授權整合",
+          "progress": 38,
+          "status": "semantic-authority-accepted-identity-mapping-pending",
+          "evidenceCount": 8,
+          "mergedPrEvidence": 0
         },
         {
           "id": "database-integration",
           "name": "正式資料庫整合",
-          "progress": 25,
-          "status": "governed-not-executed",
-          "evidenceCount": 2
+          "progress": 75,
+          "status": "controlled-read-validated",
+          "evidenceCount": 4,
+          "mergedPrEvidence": 1
         },
         {
           "id": "automated-tests",
           "name": "自動化測試",
           "progress": 75,
           "status": "strong",
-          "evidenceCount": 3
+          "evidenceCount": 19,
+          "mergedPrEvidence": 2
         },
         {
           "id": "governance-evidence",
           "name": "治理與證據",
           "progress": 100,
           "status": "accepted-chain",
-          "evidenceCount": 2
+          "evidenceCount": 12,
+          "mergedPrEvidence": 2
+        },
+        {
+          "id": "environment-abstraction",
+          "name": "環境抽象與外部資源設定",
+          "progress": 56,
+          "status": "test-integrated",
+          "evidenceCount": 8,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "land-use-image-browser",
+          "name": "地用科影像瀏覽",
+          "progress": 56,
+          "status": "implemented-live-read-validated",
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "land-rights-image-search",
+          "name": "地權科影像查詢",
+          "progress": 25,
+          "status": "implemented-test-sample-pending",
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "expropriation-image-search",
+          "name": "徵收科影像查詢",
+          "progress": 56,
+          "status": "implemented-live-read-validated",
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        }
+      ],
+      "milestones": [
+        {
+          "id": "phase-a04d",
+          "name": "Phase A-04D provenance contract alignment",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "phase-a04j",
+          "name": "Phase A-04J semantic safety-scan correction",
+          "status": "ready-for-review",
+          "progress": 50,
+          "evidenceCount": 3,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "database-integration",
+          "name": "Governed SQL Server 2019 integration",
+          "status": "pending-execution",
+          "progress": 13,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-07-environment-abstraction",
+          "name": "C1-07 environment abstraction",
+          "status": "ready-for-review",
+          "progress": 25,
+          "evidenceCount": 3,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-08b-official-document-images",
+          "name": "C1-08B official-document image integration",
+          "status": "merged-live-read-validated",
+          "progress": 75,
+          "evidenceCount": 6,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "c1-09-land-use-images",
+          "name": "C1-09 Land Use hierarchical image browser",
+          "status": "implemented-live-verification-pending",
+          "progress": 25,
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-10f-land-rights-images",
+          "name": "C1-10F Land Rights production image integration",
+          "status": "implemented-test-sample-pending",
+          "progress": 25,
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-11-expropriation-images",
+          "name": "C1-11 Expropriation production image integration",
+          "status": "ready-for-review-live-read-validated",
+          "progress": 56,
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-12-production-authorization",
+          "name": "C1-12 FileSearch production authorization framework",
+          "status": "ready-for-review-identity-mapping-pending",
+          "progress": 25,
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-13-rc1-preparation",
+          "name": "C1-13 production AD configuration and RC1 acceptance",
+          "status": "ready-for-pm-review-customer-configuration-pending",
+          "progress": 25,
+          "evidenceCount": 4,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-14-live-uat-gate",
+          "name": "C1-14 controlled production-environment validation and UAT gate",
+          "status": "ready-for-pm-review-partial-live-validation",
+          "progress": 25,
+          "evidenceCount": 6,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-17-prototype-alignment-foundation",
+          "name": "C1-17 Prototype alignment foundation",
+          "status": "ready-for-review",
+          "progress": 25,
+          "evidenceCount": 5,
+          "mergedPrEvidence": 0
+        },
+        {
+          "id": "c1-18-unified-viewer-shell",
+          "name": "C1-18 Unified Viewer behavioral shell",
+          "status": "ready-for-review",
+          "progress": 25,
+          "evidenceCount": 5,
+          "mergedPrEvidence": 0
         }
       ],
       "risks": [
         {
-          "id": "DB-INTEGRATION-NOT-EXECUTED",
-          "severity": "high",
-          "title": "Governed database integration not yet executed"
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
+        },
+        {
+          "id": "",
+          "severity": "unknown",
+          "title": "Risk"
         }
       ],
-      "nextGate": "Complete the next authorized governed SQL Server 2019 integration gate; keep FileSearch product behavior and evidence aligned while replacing skipped integration coverage with controlled execution evidence."
+      "nextGate": "Final PM merge review of Draft PR #46 after green CI and zero unresolved review findings. Do not merge in this task and do not begin C1-20.",
+      "recent": [
+        {
+          "kind": "ci",
+          "status": "success",
+          "at": "2026-08-23T13:03:55Z"
+        },
+        {
+          "kind": "commit",
+          "sha": "2117ee3",
+          "at": "2026-08-23T13:00:45Z"
+        },
+        {
+          "kind": "commit",
+          "sha": "c894f80",
+          "at": "2026-08-23T11:14:53Z"
+        },
+        {
+          "kind": "commit",
+          "sha": "2ce1ac8",
+          "at": "2026-08-23T10:24:19Z"
+        },
+        {
+          "kind": "ci",
+          "status": "success",
+          "at": "2026-08-11T22:47:50Z"
+        }
+      ]
     },
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "eb2001428ffb10ab064676f4e05e6f79bf1b1c83",
+      "head": "da280b8428b0472c653b3b83e6394e152243f260",
       "openPrCount": 4,
       "ci": "success",
-      "ciUpdatedAt": "2026-08-06T23:22:59Z",
+      "ciUpdatedAt": "2026-08-30T07:11:16Z",
       "evidence": {
         "state": "FRESH",
-        "freshnessReason": "manifest-only-delta",
-        "calibrated": true
+        "freshnessReason": "tree-equivalent",
+        "calibrated": true,
+        "manifestCommit": "28551d5"
+      },
+      "scoreEngine": {
+        "mode": "verified-evidence-v1",
+        "manualMetricsIgnored": true,
+        "mergedPrCount": 72,
+        "recentCiCompleted": 20,
+        "recentCiSuccessful": 20,
+        "scoredFeatureCount": 7,
+        "scoredMilestoneCount": 21
       },
       "metrics": {
-        "featureCoverage": 50,
-        "backendImplementation": 75,
-        "dataAccess": 75,
-        "automatedTests": 75,
-        "ciCd": 75,
-        "governanceEvidence": 75
+        "featureCoverage": 87,
+        "backendImplementation": 87,
+        "dataAccess": 80,
+        "automatedTests": 99,
+        "ciCd": 100,
+        "governanceEvidence": 98
       },
       "features": [
         {
@@ -94,45 +366,268 @@
           "name": "一般檔案查詢",
           "progress": 75,
           "status": "integrated-readonly",
-          "evidenceCount": 4
+          "evidenceCount": 4,
+          "mergedPrEvidence": 4
         },
         {
           "id": "apply-draft",
-          "name": "線上申請草稿",
-          "progress": 75,
-          "status": "integrated-in-progress",
-          "evidenceCount": 4
+          "name": "線上申請草稿 (Phase A2 & A3 Bridge)",
+          "progress": 100,
+          "status": "phase-a3-bridge-integrated",
+          "evidenceCount": 9,
+          "mergedPrEvidence": 8
         },
         {
           "id": "database-integration",
           "name": "正式資料庫整合",
-          "progress": 75,
+          "progress": 85,
           "status": "read-only-validated",
-          "evidenceCount": 3
+          "evidenceCount": 7,
+          "mergedPrEvidence": 6
+        },
+        {
+          "id": "image-mounting",
+          "name": "圖檔掛載與存取服務 (Phase 1)",
+          "progress": 75,
+          "status": "staging-accepted-readonly",
+          "evidenceCount": 7,
+          "mergedPrEvidence": 1
         },
         {
           "id": "automated-tests",
           "name": "自動化測試",
-          "progress": 75,
+          "progress": 98,
           "status": "strong",
-          "evidenceCount": 2
+          "evidenceCount": 21,
+          "mergedPrEvidence": 17
         },
         {
           "id": "governance-evidence",
           "name": "治理與證據",
+          "progress": 100,
+          "status": "strong",
+          "evidenceCount": 19,
+          "mergedPrEvidence": 16
+        },
+        {
+          "id": "chatgpt-antigravity-bridge-phase3",
+          "name": "ChatGPT ↔ Antigravity Bridge Phase 3 Stage 1",
+          "progress": 99,
+          "status": "stage2-canary-single-use-authorization-merged",
+          "evidenceCount": 13,
+          "mergedPrEvidence": 4
+        }
+      ],
+      "milestones": [
+        {
+          "id": "a1-filesearch",
+          "name": "A1 FileSearch SQL Server 2019 baseline",
+          "status": "verified",
           "progress": 75,
-          "status": "strong-with-open-gate",
-          "evidenceCount": 3
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a2-02",
+          "name": "A2-02 FileSearch to Apply Draft integration",
+          "status": "verified",
+          "progress": 75,
+          "evidenceCount": 3,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a2-03",
+          "name": "A2-03 Apply Draft edit lifecycle & whole-feature implementation",
+          "status": "verified",
+          "progress": 75,
+          "evidenceCount": 3,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a2-04",
+          "name": "A2-04 Authority Decision Package",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a2-04-impl",
+          "name": "A2-04 Apply Draft UI production implementation",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a2-05",
+          "name": "A2-05 End-to-End Acceptance",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 3,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-01",
+          "name": "Phase A3-01 Authentication & Session Security Threat Model",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 1,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-02",
+          "name": "Phase A3-02 Secure Cookie / Sliding Expiration / Session Lifecycle Contract",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 1,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-03",
+          "name": "Phase A3-03 Anonymous Draft → Authenticated Identity Session Bridge Contract",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 1,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-04-01",
+          "name": "Phase A3-04-01 Cookie Authentication & Session Security Foundation",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-04-02",
+          "name": "Phase A3-04-02 Login / Logout Authentication Lifecycle",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-04-03",
+          "name": "Phase A3-04-03 Anonymous Draft → Authenticated Identity Session Bridge",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 3,
+          "mergedPrEvidence": 2
+        },
+        {
+          "id": "a3-gaps-decision-package",
+          "name": "Phase A3 Remaining Security Gaps Authority Decision Package (C1-C6)",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 1,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-c1-credential-foundation",
+          "name": "Phase A3-C1 Formal Production Authentication Credential Authority",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-c2-c3-lockout-throttling",
+          "name": "Phase A3-C2/C3 Password Hasher & Account Lockout / Abuse Protection",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-c4-data-protection-keys",
+          "name": "Phase A3-C4 Production Cookie & Antiforgery Data Protection (D5)",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-c5-password-reset",
+          "name": "Phase A3-C5 Production Password Reset Subsystem / RQ-011",
+          "status": "verified",
+          "progress": 100,
+          "evidenceCount": 2,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "a3-c6-formal-security-audit",
+          "name": "Phase A3-C6 Formal Security Audit Persistence / RQ-007",
+          "status": "accepted-merged-complete",
+          "progress": 100,
+          "evidenceCount": 5,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "phase1-image-mount",
+          "name": "Phase 1 圖檔掛載與 Healthz 端點實作與 Staging 驗收",
+          "status": "staging-accepted",
+          "progress": 75,
+          "evidenceCount": 3,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "pd01-production-deployment-preparation",
+          "name": "PD-01 正式環境部署決策與維運驗收治理 (Windows / IIS / SQL Server 2019)",
+          "status": "accepted-merged-complete",
+          "progress": 100,
+          "evidenceCount": 15,
+          "mergedPrEvidence": 1
+        },
+        {
+          "id": "pd02-production-deployment-input-collection",
+          "name": "PD-02 正式環境建置資料收集與演練就緒治理 (Dry-Run Readiness Gate)",
+          "status": "accepted-merged-complete",
+          "progress": 100,
+          "evidenceCount": 11,
+          "mergedPrEvidence": 1
         }
       ],
       "risks": [
         {
-          "id": "A2-03-AUTHORITY-GAP",
-          "severity": "high",
-          "title": "A2-03 exact editable field contract remains unresolved"
+          "id": "IMAGE-MOUNT-PRODUCTION-DEPLOYMENT",
+          "severity": "low",
+          "title": "正式生產環境圖檔目錄掛載與上線驗收"
+        },
+        {
+          "id": "PHASE-A3-PRODUCTION-DEPLOYMENT-PREPARATION",
+          "severity": "low",
+          "title": "PD-01/PD-02 生產環境配置與上線部署治理驗收"
         }
       ],
-      "nextGate": "Resolve the A2-03 Exact Field Contract governance dependency before extending Apply Draft lifecycle beyond the already merged A2-02 integration."
+      "nextGate": "Project Manager ratification of next operational deployment phase (PD-03 Non-Production Dry-Run Execution) under change window governance",
+      "recent": [
+        {
+          "kind": "ci",
+          "status": "success",
+          "at": "2026-08-30T07:11:55Z"
+        },
+        {
+          "kind": "ci",
+          "status": "success",
+          "at": "2026-08-30T07:11:16Z"
+        },
+        {
+          "kind": "commit",
+          "sha": "da280b8",
+          "at": "2026-08-30T07:10:28Z"
+        },
+        {
+          "kind": "commit",
+          "sha": "28551d5",
+          "at": "2026-08-30T04:27:10Z"
+        },
+        {
+          "kind": "commit",
+          "sha": "0656a62",
+          "at": "2026-08-30T04:21:15Z"
+        }
+      ]
     }
   ]
 }

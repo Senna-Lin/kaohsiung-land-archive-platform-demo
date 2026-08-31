@@ -1,71 +1,19 @@
-const SNAPSHOT='./dashboard-snapshot.json';
-const WEIGHTS={featureCoverage:25,backendImplementation:20,dataAccess:15,automatedTests:15,ciCd:10,governanceEvidence:15};
-const LABELS={featureCoverage:'功能覆蓋',backendImplementation:'後端實作',dataAccess:'資料存取',automatedTests:'自動化測試',ciCd:'CI／CD',governanceEvidence:'治理與證據'};
-
-function dayCount(){const end=new Date('2026-10-15T23:59:59+08:00');document.querySelector('#days').textContent=Math.max(0,Math.ceil((end-new Date())/86400000))+' 天'}
-function fmt(v){return typeof v==='number'?Math.round(v)+'%':'—'}
-function evidenceClass(state){return state==='FRESH'?'ok':state==='NEEDS CALIBRATION'?'warn':'bad'}
-function weightedScore(line){if(!line?.evidence?.calibrated)return null;return Math.round(Object.entries(WEIGHTS).reduce((s,[k,w])=>s+(line.metrics?.[k]||0)*w/100,0))}
-function featureMap(line){const m=new Map();(line?.features||[]).forEach(f=>m.set(f.id||f.name,f));return m}
-
-function renderKpis(lines){
-  const c=lines.find(x=>x.key==='codex'),a=lines.find(x=>x.key==='antigravity');
-  const cs=weightedScore(c),as=weightedScore(a);
-  document.querySelector('#codexScore').textContent=cs??'—';
-  document.querySelector('#antScore').textContent=as??'—';
-  document.querySelector('#codexEvidence').textContent=c?.evidence?.state||'—';
-  document.querySelector('#antEvidence').textContent=a?.evidence?.state||'—';
-  const fc=[c,a].filter(x=>x?.evidence?.calibrated).map(x=>x.metrics.featureCoverage);
-  document.querySelector('#common').textContent=fc.length===2?Math.round((fc[0]+fc[1])/2)+'%':'—';
-  document.querySelector('#riskCount').textContent=lines.flatMap(l=>l.risks||[]).filter(r=>String(r.severity).toLowerCase()==='high').length;
-}
-
-function renderLines(lines){
-  document.querySelector('#lineStatus').innerHTML=lines.map(l=>{
-    const score=weightedScore(l),state=l.evidence?.state||'UNKNOWN';
-    return `<div class="status"><span><b>${l.label}</b><br><small class="muted">HEAD ${String(l.head||'').slice(0,7)} · Open PR ${l.openPrCount??'—'} · CI ${l.ci||'—'} · Evidence ${l.evidence?.freshnessReason||'—'}</small></span><span class="badge ${evidenceClass(state)}">${state}${score===null?'':' · '+score}</span></div>`
-  }).join('')
-}
-
-function renderMetrics(lines){
-  const c=lines.find(x=>x.key==='codex'),a=lines.find(x=>x.key==='antigravity');
-  document.querySelector('#metricBody').innerHTML=Object.entries(WEIGHTS).map(([k,w])=>`<tr><td>${LABELS[k]}</td><td>${w}%</td><td>${c?.evidence?.calibrated?fmt(c.metrics?.[k]):'—'}</td><td>${a?.evidence?.calibrated?fmt(a.metrics?.[k]):'—'}</td></tr>`).join('')
-}
-
-function renderFeatures(lines){
-  const c=featureMap(lines.find(x=>x.key==='codex')),a=featureMap(lines.find(x=>x.key==='antigravity'));
-  const ids=[...new Set([...c.keys(),...a.keys()])];
-  document.querySelector('#featureBody').innerHTML=ids.length?ids.map(id=>{
-    const cf=c.get(id),af=a.get(id),name=cf?.name||af?.name||id;
-    return `<tr><td><b>${name}</b></td><td>${fmt(cf?.progress)}<br><span class="muted">${cf?.status||'—'}</span></td><td>${fmt(af?.progress)}<br><span class="muted">${af?.status||'—'}</span></td><td>${(cf?.evidenceCount||0)+(af?.evidenceCount||0)} evidence refs</td></tr>`
-  }).join(''):'<tr><td colspan="4" class="muted">尚無可公開的功能校準資料。</td></tr>'
-}
-
-function renderRisks(lines){
-  const risks=lines.flatMap(l=>(l.risks||[]).map(r=>({...r,line:l.key})));
-  document.querySelector('#risks').innerHTML=risks.length?risks.map(r=>`<div class="status"><span><b>${r.line==='codex'?'Codex':'Antigravity'} · ${r.title||r.id}</b></span><span class="badge ${String(r.severity).toLowerCase()==='high'?'bad':'warn'}">${r.severity||'risk'}</span></div>`).join(''):'<div class="muted">目前沒有公開風險摘要。</div>'
-}
-
-function renderGates(lines){document.querySelector('#nextGates').innerHTML=lines.map(l=>`<div class="status"><span>${l.key==='codex'?'Codex':'Antigravity'}</span><b>${l.nextGate||'尚未提供下一個 Gate'}</b></div>`).join('')}
-function renderSnapshotMeta(snapshot,lines){const newest=lines.map(l=>l.ciUpdatedAt).filter(Boolean).sort().pop();document.querySelector('#activity').innerHTML=`<div class="row"><span>公開 Snapshot 產生時間</span><small class="muted">${new Date(snapshot.generatedAt).toLocaleString('zh-TW')}</small></div><div class="row"><span>最近 CI 更新</span><small class="muted">${newest?new Date(newest).toLocaleString('zh-TW'):'—'}</small></div><div class="row"><span>資料來源</span><small class="muted">GitHub Actions sanitized snapshot</small></div>`}
-
-async function load(){
-  const status=document.querySelector('#snapshotStatus');
-  try{
-    status.textContent='載入中…';
-    const response=await fetch(`${SNAPSHOT}?v=${Date.now()}`,{cache:'no-store'});
-    if(!response.ok)throw new Error(`${response.status} ${response.statusText}`);
-    const snapshot=await response.json();
-    const lines=Array.isArray(snapshot.lines)?snapshot.lines:[];
-    if(lines.length!==2)throw new Error('snapshot lines incomplete');
-    renderKpis(lines);renderLines(lines);renderMetrics(lines);renderFeatures(lines);renderRisks(lines);renderGates(lines);renderSnapshotMeta(snapshot,lines);
-    status.textContent='已載入 '+new Date(snapshot.generatedAt).toLocaleString('zh-TW');
-    status.className='ok';
-  }catch(e){
-    status.textContent='Snapshot 載入失敗：'+e.message;
-    status.className='bad';
-  }
-}
-
-document.querySelector('#refresh').onclick=load;
-dayCount();load();
+const SNAPSHOT='./dashboard-snapshot.json',CATALOG='./project-catalog.json',ROADMAP='./project-roadmap.json',HISTORY='./dashboard-history.json';
+const WEIGHTS={featureCoverage:25,backendImplementation:20,dataAccess:15,automatedTests:15,ciCd:10,governanceEvidence:15};const LABELS={featureCoverage:'功能覆蓋',backendImplementation:'後端實作',dataAccess:'資料存取',automatedTests:'自動化測試',ciCd:'CI／CD',governanceEvidence:'治理與證據'};
+function fmt(v){return typeof v==='number'?Math.round(v)+'%':'—'}function weightedScore(l){if(!l?.evidence?.calibrated)return null;return Math.round(Object.entries(WEIGHTS).reduce((s,[k,w])=>s+(l.metrics?.[k]||0)*w/100,0))}function featureMap(l){const m=new Map();(l?.features||[]).forEach(f=>m.set(f.id||f.name,f));return m}function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function dayCount(deadline){const end=new Date(deadline||'2026-10-15T23:59:59+08:00');const d=Math.max(0,Math.ceil((end-new Date())/86400000));document.querySelector('#days').textContent=d+' 天';return d}
+function renderKpis(lines,days){const c=lines.find(x=>x.key==='codex'),a=lines.find(x=>x.key==='antigravity'),cs=weightedScore(c),as=weightedScore(a);document.querySelector('#codexScore').textContent=cs??'—';document.querySelector('#antScore').textContent=as??'—';document.querySelector('#codexEvidence').textContent=c?.evidence?.state||'—';document.querySelector('#antEvidence').textContent=a?.evidence?.state||'—';const fc=[c,a].filter(x=>x?.evidence?.calibrated).map(x=>x.metrics.featureCoverage);document.querySelector('#common').textContent=fc.length===2?Math.round((fc[0]+fc[1])/2)+'%':'—';document.querySelector('#riskCount').textContent=lines.flatMap(l=>l.risks||[]).filter(r=>String(r.severity).toLowerCase()==='high').length;const risk=lines.some(l=>l.evidence?.state!=='FRESH')?'BLOCKED':lines.flatMap(l=>l.risks||[]).some(r=>String(r.severity).toLowerCase()==='high')?'AT RISK':days<30?'WATCH':'CONTROLLED';const e=document.querySelector('#deliveryRisk');e.textContent=risk;e.className='value '+(risk==='CONTROLLED'?'ok':risk==='WATCH'?'warn':'bad')}
+function renderLines(snapshot){const lines=snapshot.lines;document.querySelector('#lineStatus').innerHTML=lines.map(l=>`<div class="status"><span><b>${esc(l.label)}</b><br><small class="muted">HEAD ${esc(String(l.head||'').slice(0,7))} · Open PR ${l.openPrCount??'—'} · CI ${esc(l.ci||'—')} · Evidence ${esc(l.evidence?.freshnessReason||'—')}</small></span><span class="badge ${l.evidence?.state==='FRESH'?'ok':l.evidence?.state==='NEEDS CALIBRATION'?'warn':'bad'}">${esc(l.evidence?.state||'UNKNOWN')} · ${weightedScore(l)??'—'}</span></div>`).join('')+`<div class="status"><span><b>Prototype</b><br><small class="muted">Freeze ${esc(snapshot.prototype?.freezeCommit||'—')} · Dashboard ${esc(snapshot.prototype?.dashboardHead||'—')}</small></span><span class="badge ok">${esc(snapshot.prototype?.status||'CONTROLLED')}</span></div>`}
+function renderMetrics(lines){const c=lines.find(x=>x.key==='codex'),a=lines.find(x=>x.key==='antigravity');document.querySelector('#metricBody').innerHTML=Object.entries(WEIGHTS).map(([k,w])=>`<tr><td>${LABELS[k]}</td><td>${w}%</td><td>${c?.evidence?.calibrated?fmt(c.metrics?.[k]):'—'}</td><td>${a?.evidence?.calibrated?fmt(a.metrics?.[k]):'—'}</td></tr>`).join('')}
+function cell(f){return f?`${fmt(f.progress)}<br><span class="muted">${esc(f.status||'已校準')}</span>`:'<span class="badge warn">尚未校準</span>'}
+function renderFeatures(lines,catalog,filter='all'){const c=featureMap(lines.find(x=>x.key==='codex')),a=featureMap(lines.find(x=>x.key==='antigravity'));const list=(catalog?.functions||[]).filter(x=>filter==='all'||x.phase===filter);let phase='';document.querySelector('#featureBody').innerHTML=list.map(item=>{const cf=c.get(item.id),af=a.get(item.id),divider=item.phase!==phase?(phase=item.phase,`<tr class="phase"><td colspan="4"><b>${esc(item.phase)}</b></td></tr>`):'';const refs=(cf?.evidenceCount||0)+(af?.evidenceCount||0);return `${divider}<tr><td><b>${esc(item.name)}</b></td><td>${cell(cf)}</td><td>${cell(af)}</td><td class="muted">${refs?refs+' evidence refs':'尚無 Evidence'}</td></tr>`}).join('')}
+function renderRisks(lines){const rs=lines.flatMap(l=>(l.risks||[]).map(r=>({...r,line:l.key})));document.querySelector('#risks').innerHTML=rs.length?rs.map(r=>`<div class="status"><span><b>${r.line==='codex'?'Codex':'Antigravity'} · ${esc(r.title||r.id)}</b></span><span class="badge ${String(r.severity).toLowerCase()==='high'?'bad':'warn'}">${esc(r.severity||'risk')}</span></div>`).join(''):'<div class="muted">目前沒有公開風險摘要。</div>'}
+function renderGates(lines){document.querySelector('#nextGates').innerHTML=lines.map((l,i)=>`<div class="status"><span>${i+1}. ${l.key==='codex'?'Codex':'Antigravity'}</span><b>${esc(l.nextGate||'尚未提供下一個 Gate')}</b></div>`).join('')}
+function renderActivity(snapshot){const events=snapshot.lines.flatMap(l=>(l.recent||[]).map(e=>({...e,line:l.key}))).sort((a,b)=>String(b.at||'').localeCompare(String(a.at||''))).slice(0,8);document.querySelector('#activity').innerHTML=`<div class="row"><span>公開 Snapshot</span><small class="muted">${new Date(snapshot.generatedAt).toLocaleString('zh-TW')}</small></div>`+events.map(e=>`<div class="row"><span>${e.line==='codex'?'Codex':'Antigravity'} · ${e.kind==='ci'?'CI '+esc(e.status):'Commit '+esc(e.sha)}</span><small class="muted">${e.at?new Date(e.at).toLocaleString('zh-TW'):'—'}</small></div>`).join('')}
+function renderPm(lines,catalog,days){const c=lines.find(x=>x.key==='codex'),a=lines.find(x=>x.key==='antigravity'),cs=weightedScore(c),as=weightedScore(a);const leader=cs==null||as==null?'證據不足':as>cs?'Antigravity':cs>as?'Codex':'並列';const calibrated=new Set(lines.flatMap(l=>(l.features||[]).map(f=>f.id)));const remaining=(catalog?.functions||[]).filter(f=>!calibrated.has(f.id)).length;document.querySelector('#pmBrief').innerHTML=`<p><b>整體判讀：</b>${leader} 目前 Evidence Benchmark 領先；分數代表證據成熟度，不等同整體工程完成率。</p><p><b>校準缺口：</b>${remaining} 個完整功能節點尚未取得任何一條生產線正式 Evidence。</p><p><b>截止風險：</b>距 10/15 尚 ${days} 天；目前高風險 Gate ${lines.flatMap(x=>x.risks||[]).filter(r=>String(r.severity).toLowerCase()==='high').length} 項。</p>`}
+function phaseProgress(line,ids){const m=featureMap(line),vals=ids.map(id=>m.get(id)?.progress).filter(v=>typeof v==='number');return vals.length?Math.round(vals.reduce((a,b)=>a+b,0)/vals.length):null}
+function renderGantt(lines,roadmap){const c=lines.find(x=>x.key==='codex'),a=lines.find(x=>x.key==='antigravity');document.querySelector('#gantt').innerHTML=(roadmap?.phases||[]).map(p=>{const cp=phaseProgress(c,p.featureIds),ap=phaseProgress(a,p.featureIds),best=[cp,ap].filter(v=>v!=null);const v=best.length?Math.max(...best):null;return `<div class="ganttrow"><span>${esc(p.name)}</span><div class="ganttbar"><div class="ganttfill" style="width:${v??0}%"></div></div><b>${v==null?'未校準':v+'%'}</b></div>`}).join('')}
+function renderForecast(history,lines,days){const pts=(history?.points||[]).filter(p=>p.codex!=null||p.antigravity!=null).slice(-30);const c=lines.find(x=>x.key==='codex'),a=lines.find(x=>x.key==='antigravity'),cs=weightedScore(c),as=weightedScore(a);let text='歷史資料不足，先累積自動 Snapshot 趨勢。';if(pts.length>=2){const first=pts[0],last=pts.at(-1),span=Math.max(1,(new Date(last.at)-new Date(first.at))/86400000);const dc=(last.codex-first.codex)/span,da=(last.antigravity-first.antigravity)/span;const eta=(s,d)=>d>0?Math.ceil((85-s)/d):null;const ce=eta(cs??0,dc),ae=eta(as??0,da);text=`Evidence readiness 85 分推估：Codex ${ce!=null?ce+' 天':'趨勢不足'}；Antigravity ${ae!=null?ae+' 天':'趨勢不足'}。此為證據成熟度趨勢，不是工程完工日。`;}
+document.querySelector('#forecastText').textContent=text;const w=720,h=220,p=35,max=Math.max(100,...pts.flatMap(x=>[x.codex||0,x.antigravity||0]));const xs=(i)=>p+(pts.length<=1?0:i*(w-2*p)/(pts.length-1)),ys=(v)=>h-p-(v/max)*(h-2*p);const poly=k=>pts.map((x,i)=>`${xs(i)},${ys(x[k]||0)}`).join(' ');document.querySelector('#forecastChart').innerHTML=`<line x1="${p}" y1="${h-p}" x2="${w-p}" y2="${h-p}" stroke="#48647f"/><line x1="${p}" y1="${p}" x2="${p}" y2="${h-p}" stroke="#48647f"/>${pts.length?`<polyline points="${poly('codex')}" fill="none" stroke="#5ba7ff" stroke-width="4"/><polyline points="${poly('antigravity')}" fill="none" stroke="#46d7df" stroke-width="4"/>`:''}<text x="${w-145}" y="25" fill="#8bcaff" font-size="12">Codex</text><text x="${w-75}" y="25" fill="#6de8ed" font-size="12">Antigravity</text>`;document.querySelector('#forecastRisk').textContent=days<30?'期限進入高壓區':lines.some(l=>l.evidence?.state!=='FRESH')?'Evidence 需校準':'依目前 Evidence 持續監控'}
+async function load(){const s=document.querySelector('#snapshotStatus');try{s.textContent='載入中…';const urls=[SNAPSHOT,CATALOG,ROADMAP,HISTORY].map(u=>fetch(`${u}?v=${Date.now()}`,{cache:'no-store'}));const [sr,cr,rr,hr]=await Promise.all(urls);if(!sr.ok||!cr.ok||!rr.ok)throw new Error('核心資料載入失敗');const snapshot=await sr.json(),catalog=await cr.json(),roadmap=await rr.json(),history=hr.ok?await hr.json():{points:[]},lines=snapshot.lines||[],days=dayCount(roadmap.deadline);if(lines.length!==2)throw new Error('snapshot lines incomplete');renderKpis(lines,days);renderLines(snapshot);renderMetrics(lines);renderFeatures(lines,catalog);renderRisks(lines);renderGates(lines);renderActivity(snapshot);renderPm(lines,catalog,days);renderGantt(lines,roadmap);renderForecast(history,lines,days);s.textContent='已載入 '+new Date(snapshot.generatedAt).toLocaleString('zh-TW');s.className='ok';window.__dashboard={lines,catalog,roadmap,history};}catch(e){s.textContent='Dashboard 載入失敗：'+e.message;s.className='bad'}}
+document.querySelector('#refresh').onclick=load;document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-page]').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));document.querySelector('#'+b.dataset.page).classList.add('active')});document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-filter]').forEach(x=>x.classList.remove('active'));b.classList.add('active');if(window.__dashboard)renderFeatures(window.__dashboard.lines,window.__dashboard.catalog,b.dataset.filter)});load();

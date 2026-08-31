@@ -1,0 +1,15 @@
+{
+  "schemaVersion":"1.0",
+  "deadline":"2026-10-15T23:59:59+08:00",
+  "prototype":{"freezeCommit":"eba2afa21cf469519cc3166b46ba39d7b2bfc8d7","status":"CONTROLLED"},
+  "phases":[
+    {"id":"foundation","name":"系統基礎／Authentication／RBAC","featureIds":["platform-foundation","authentication","rbac","session-security","audit-foundation"]},
+    {"id":"filesearch","name":"FileSearch 正式化","featureIds":["file-search","database-integration"]},
+    {"id":"images","name":"Viewer／三科影像","featureIds":["viewer","land-use-images","land-rights-images","expropriation-images"]},
+    {"id":"application","name":"Application Flow","featureIds":["apply-draft","apply-submit","application-state-machine","review","issue-files","return-files"]},
+    {"id":"circulation","name":"調閱監控／期限","featureIds":["circulation-monitor","due-warning"]},
+    {"id":"admin","name":"Reports／Admin／治理功能","featureIds":["confidential","inventory","reports","document-import","user-management","role-management","system-parameters","email-notification","audit-log","anomaly-monitoring","forgot-password"]},
+    {"id":"quality","name":"Security／Quality／Evidence","featureIds":["automated-tests","governance-evidence"]},
+    {"id":"release","name":"UAT／Deployment","featureIds":["uat-release"]}
+  ]
+}
