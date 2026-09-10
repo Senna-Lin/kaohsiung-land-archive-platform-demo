@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.1",
-  "generatedAt": "2026-08-31T16:32:33.434Z",
+  "generatedAt": "2026-09-10T13:31:48.258Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2",
@@ -19,7 +19,7 @@
   "prototype": {
     "status": "CONTROLLED",
     "freezeCommit": "eba2afa",
-    "dashboardHead": "b153765"
+    "dashboardHead": "7e2a648"
   },
   "publicSafety": {
     "rawManifestIncluded": false,
@@ -428,77 +428,77 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "da280b8428b0472c653b3b83e6394e152243f260",
+      "head": "8bb02fa6054d50816bb0df61da55920213a5dc74",
       "openPrCount": 4,
       "ci": "success",
-      "ciUpdatedAt": "2026-08-30T07:11:16Z",
+      "ciUpdatedAt": "2026-09-10T03:23:16Z",
       "evidence": {
-        "state": "FRESH",
-        "freshnessReason": "tree-equivalent",
-        "calibrated": true,
-        "manifestCommit": "28551d5"
+        "state": "STALE",
+        "freshnessReason": "repository-changed-after-manifest",
+        "calibrated": false,
+        "manifestCommit": "188b353"
       },
       "progressEngine": {
         "mode": "customer-progress-v2",
         "strictStageAuthority": true,
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
-        "mergedPrCount": 72
+        "mergedPrCount": 81
       },
-      "engineeringProgress": 49,
-      "evidenceCoverage": 100,
-      "integrationCompleteCount": 12,
-      "buildingCount": 4,
-      "plannedCount": 17,
-      "notStartedCount": 0,
+      "engineeringProgress": null,
+      "evidenceCoverage": null,
+      "integrationCompleteCount": null,
+      "buildingCount": null,
+      "plannedCount": null,
+      "notStartedCount": null,
       "categories": [
         {
           "id": "foundation",
           "name": "系統基礎與登入安全",
-          "progress": 76
+          "progress": null
         },
         {
           "id": "filesearch",
           "name": "一般檔案查詢與資料庫",
-          "progress": 90
+          "progress": null
         },
         {
           "id": "images",
           "name": "PDF／影像與三科查詢",
-          "progress": 38
+          "progress": null
         },
         {
           "id": "application",
           "name": "申請、審核、給卷與還卷",
-          "progress": 35
+          "progress": null
         },
         {
           "id": "circulation",
           "name": "調閱監控與期限管理",
-          "progress": 20
+          "progress": null
         },
         {
           "id": "admin",
           "name": "報表、治理與後台管理",
-          "progress": 36
+          "progress": null
         },
         {
           "id": "quality",
           "name": "測試與驗證紀錄",
-          "progress": 100
+          "progress": null
         },
         {
           "id": "release",
           "name": "驗收與上線準備",
-          "progress": 60
+          "progress": null
         }
       ],
       "features": [
         {
           "id": "platform-foundation",
           "name": "系統共用基礎",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "系統基礎、安全與部署準備已完成整合驗證",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -506,8 +506,8 @@
         {
           "id": "authentication",
           "name": "登入與身分驗證",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "登入、帳號驗證與防暴力登入已完成整合測試",
           "evidenceState": "已確認",
           "evidenceCount": 3
@@ -515,8 +515,8 @@
         {
           "id": "rbac",
           "name": "角色與權限管理",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "角色與權限需求已確認，正式角色權限模組尚未進入實作",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -524,8 +524,8 @@
         {
           "id": "session-security",
           "name": "登入工作階段安全",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "登入工作階段、Cookie 與安全生命週期已完成整合測試",
           "evidenceState": "已確認",
           "evidenceCount": 4
@@ -533,8 +533,8 @@
         {
           "id": "audit-foundation",
           "name": "稽核紀錄基礎",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "正式稽核資料保存與安全事件紀錄已完成整合測試",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -542,8 +542,8 @@
         {
           "id": "file-search",
           "name": "一般檔案查詢",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "一般檔案查詢已完成 SQL Server 2019 實際唯讀驗證",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -551,8 +551,8 @@
         {
           "id": "viewer",
           "name": "PDF／影像瀏覽",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "PDF／影像預覽、下載與健康檢查已完成測試環境驗證",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -560,8 +560,8 @@
         {
           "id": "land-use-images",
           "name": "地用科影像查詢",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "共用影像能力已完成，地用科專屬流程尚待正式建置",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -569,8 +569,8 @@
         {
           "id": "land-rights-images",
           "name": "地權科影像查詢",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "共用影像能力已完成，地權科專屬流程尚待正式建置",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -578,8 +578,8 @@
         {
           "id": "expropriation-images",
           "name": "徵收科影像查詢",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "共用影像能力已完成，徵收科專屬流程尚待正式建置",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -587,8 +587,8 @@
         {
           "id": "database-integration",
           "name": "正式資料庫整合",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "查詢、帳號與稽核的 SQL Server 2019 資料層已完成整合測試",
           "evidenceState": "已確認",
           "evidenceCount": 3
@@ -596,8 +596,8 @@
         {
           "id": "apply-draft",
           "name": "線上申請草稿",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "線上申請草稿、編修、確認與登入銜接已完成端到端測試",
           "evidenceState": "已確認",
           "evidenceCount": 5
@@ -605,8 +605,8 @@
         {
           "id": "apply-submit",
           "name": "正式申請送出",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "正式送件明確列為後續階段，目前未建立正式案件",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -614,8 +614,8 @@
         {
           "id": "application-state-machine",
           "name": "申請案件流程管理",
-          "progress": 40,
-          "stageLabel": "建置中",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "草稿生命週期已完成，正式案件生命週期仍待建置",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -623,8 +623,8 @@
         {
           "id": "review",
           "name": "審核作業",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "審核作業已列入後續階段，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -632,8 +632,8 @@
         {
           "id": "issue-files",
           "name": "給卷作業",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "給卷作業已列入後續階段，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -641,8 +641,8 @@
         {
           "id": "return-files",
           "name": "還卷作業",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "還卷作業已列入後續階段，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -650,8 +650,8 @@
         {
           "id": "circulation-monitor",
           "name": "調閱監控",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "調閱監控已列入後續階段，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -659,8 +659,8 @@
         {
           "id": "due-warning",
           "name": "期限、逾期與展期管理",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "期限、逾期與展期需求已確認，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -668,8 +668,8 @@
         {
           "id": "confidential",
           "name": "機密管理",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "機密管理需求已確認，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -677,8 +677,8 @@
         {
           "id": "inventory",
           "name": "清查作業",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "清查作業已納入功能範圍，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -686,8 +686,8 @@
         {
           "id": "reports",
           "name": "報表統計",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "報表統計已納入功能範圍，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -695,8 +695,8 @@
         {
           "id": "document-import",
           "name": "公文匯入",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "公文匯入已納入功能範圍，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -704,8 +704,8 @@
         {
           "id": "user-management",
           "name": "使用者與單位管理",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "已有登入帳號資料基礎，後台使用者與單位管理尚未實作",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -713,8 +713,8 @@
         {
           "id": "role-management",
           "name": "角色權限維護",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "角色權限管理已確認需求，目前尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -722,8 +722,8 @@
         {
           "id": "system-parameters",
           "name": "系統參數",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "系統參數需求已確認，後台參數維護尚未正式實作",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -731,8 +731,8 @@
         {
           "id": "email-notification",
           "name": "電子郵件通知",
-          "progress": 40,
-          "stageLabel": "建置中",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "已建立密碼重設通知介面，正式郵件環境仍待串接",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -740,8 +740,8 @@
         {
           "id": "audit-log",
           "name": "稽核紀錄查詢",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "稽核紀錄保存、查詢與重要操作紀錄已完成整合測試",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -749,8 +749,8 @@
         {
           "id": "anomaly-monitoring",
           "name": "異常監控",
-          "progress": 40,
-          "stageLabel": "建置中",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "登入異常與速率限制已完成，完整異常監控仍待擴充",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -758,8 +758,8 @@
         {
           "id": "forgot-password",
           "name": "忘記密碼與密碼重設",
-          "progress": 90,
-          "stageLabel": "整合驗證已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "忘記密碼、一次性安全連結與登入失效已完成整合測試",
           "evidenceState": "已確認",
           "evidenceCount": 1
@@ -767,8 +767,8 @@
         {
           "id": "automated-tests",
           "name": "自動化測試",
-          "progress": 100,
-          "stageLabel": "客戶驗收已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "目前 785 項自動測試全數通過",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -776,8 +776,8 @@
         {
           "id": "governance-evidence",
           "name": "需求與驗證紀錄",
-          "progress": 100,
-          "stageLabel": "客戶驗收已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "需求、決策、驗證與部署紀錄持續完整維護",
           "evidenceState": "已確認",
           "evidenceCount": 2
@@ -785,8 +785,8 @@
         {
           "id": "uat-release",
           "name": "驗收與上線準備",
-          "progress": 60,
-          "stageLabel": "主要功能已完成",
+          "progress": null,
+          "stageLabel": "資料待更新",
           "status": "部署文件與測試環境準備已完成，正式上線與客戶驗收尚未開始",
           "evidenceState": "已確認",
           "evidenceCount": 3
@@ -798,8 +798,12 @@
           "severity": "低"
         },
         {
-          "title": "PD-01/PD-02 生產環境配置與上線部署治理驗收",
+          "title": "PROD-04 驗收環境現場唯讀實證預檢與證據回傳",
           "severity": "低"
+        },
+        {
+          "title": "PROD-06 正式環境維護窗口執行授權與操作員輸入整備",
+          "severity": "中"
         }
       ],
       "nextStep": "完成非正式環境部署演練，再接續角色權限與後續業務流程建置。",
@@ -807,27 +811,27 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-08-30T07:11:55Z"
+          "at": "2026-09-10T03:23:16Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-08-30T07:11:16Z"
+          "at": "2026-09-10T03:21:56Z"
         },
         {
           "kind": "update",
-          "sha": "da280b8",
-          "at": "2026-08-30T07:10:28Z"
+          "sha": "8bb02fa",
+          "at": "2026-09-10T03:21:10Z"
         },
         {
           "kind": "update",
-          "sha": "28551d5",
-          "at": "2026-08-30T04:27:10Z"
+          "sha": "4f99171",
+          "at": "2026-09-09T16:48:28Z"
         },
         {
           "kind": "update",
-          "sha": "0656a62",
-          "at": "2026-08-30T04:21:15Z"
+          "sha": "188b353",
+          "at": "2026-09-09T16:39:32Z"
         }
       ]
     }
