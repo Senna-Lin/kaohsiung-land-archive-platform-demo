@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-12T15:34:23.170Z",
+  "generatedAt": "2026-09-12T20:39:48.513Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "10b39d9798d99ef83bed3e21af8f46138aa667d2",
+      "head": "40f189ac5f6f4edbb1bc080c56fc356cbab01241",
       "openPrCount": 3,
       "ci": "success",
-      "ciUpdatedAt": "2026-09-12T15:18:46Z",
+      "ciUpdatedAt": "2026-09-12T16:24:15Z",
       "evidence": {
         "state": "FRESH",
-        "freshnessReason": "tree-equivalent",
+        "freshnessReason": "manifest-at-head",
         "calibrated": true,
         "baselineVerified": true,
-        "manifestCommit": "e638d60",
-        "manifestGeneratedAt": "2026-09-12T23:13:00+08:00"
+        "manifestCommit": "40f189a",
+        "manifestGeneratedAt": "2026-09-13T00:15:00+08:00"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -450,7 +450,7 @@
         "staleEvidencePolicy": "verified-baseline-visible-no-unverified-promotion",
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
-        "mergedPrCount": 83
+        "mergedPrCount": 85
       },
       "engineeringProgress": 49,
       "evidenceCoverage": 100,
@@ -818,27 +818,27 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-12T15:18:46Z"
+          "at": "2026-09-12T16:25:43Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-12T15:17:35Z"
+          "at": "2026-09-12T16:24:15Z"
         },
         {
           "kind": "update",
-          "sha": "10b39d9",
-          "at": "2026-09-12T15:16:42Z"
+          "sha": "40f189a",
+          "at": "2026-09-12T16:23:26Z"
         },
         {
           "kind": "update",
-          "sha": "e638d60",
-          "at": "2026-09-12T15:13:58Z"
+          "sha": "321ed3b",
+          "at": "2026-09-12T15:42:19Z"
         },
         {
           "kind": "update",
-          "sha": "ee27235",
-          "at": "2026-09-12T00:29:06Z"
+          "sha": "17987c7",
+          "at": "2026-09-12T15:39:42Z"
         }
       ]
     }
