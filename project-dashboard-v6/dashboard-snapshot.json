@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-13T04:50:43.160Z",
+  "generatedAt": "2026-09-13T11:55:12.693Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "40f189ac5f6f4edbb1bc080c56fc356cbab01241",
+      "head": "412a63ddcf0d2e2dfc7c740f611d450958e68d8a",
       "openPrCount": 3,
       "ci": "success",
-      "ciUpdatedAt": "2026-09-12T16:24:15Z",
+      "ciUpdatedAt": "2026-09-13T11:24:24Z",
       "evidence": {
         "state": "FRESH",
         "freshnessReason": "manifest-at-head",
         "calibrated": true,
         "baselineVerified": true,
-        "manifestCommit": "40f189a",
-        "manifestGeneratedAt": "2026-09-13T00:15:00+08:00"
+        "manifestCommit": "412a63d",
+        "manifestGeneratedAt": "2026-09-13T19:15:00+08:00"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -450,7 +450,7 @@
         "staleEvidencePolicy": "verified-baseline-visible-no-unverified-promotion",
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
-        "mergedPrCount": 85
+        "mergedPrCount": 86
       },
       "engineeringProgress": 49,
       "evidenceCoverage": 100,
@@ -818,12 +818,17 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-12T16:25:43Z"
+          "at": "2026-09-13T11:25:53Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-12T16:24:15Z"
+          "at": "2026-09-13T11:24:24Z"
+        },
+        {
+          "kind": "update",
+          "sha": "412a63d",
+          "at": "2026-09-13T11:23:44Z"
         },
         {
           "kind": "update",
@@ -834,11 +839,6 @@
           "kind": "update",
           "sha": "321ed3b",
           "at": "2026-09-12T15:42:19Z"
-        },
-        {
-          "kind": "update",
-          "sha": "17987c7",
-          "at": "2026-09-12T15:39:42Z"
         }
       ]
     }
