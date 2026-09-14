@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-14T04:59:06.177Z",
+  "generatedAt": "2026-09-14T12:51:14.591Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -433,7 +433,7 @@
       "key": "antigravity",
       "label": "Antigravity Mac",
       "head": "e99ab246c13536d767cdc0f8ec357d0d39d160c8",
-      "openPrCount": 3,
+      "openPrCount": 4,
       "ci": "success",
       "ciUpdatedAt": "2026-09-13T12:39:48Z",
       "evidence": {
