@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-22T04:58:54.860Z",
+  "generatedAt": "2026-09-22T10:26:48.168Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -20,7 +20,7 @@
   "prototype": {
     "status": "CONTROLLED",
     "freezeCommit": "eba2afa",
-    "dashboardHead": "1c4b193"
+    "dashboardHead": "e98d59f"
   },
   "publicSafety": {
     "rawManifestIncluded": false,
@@ -432,14 +432,14 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "e6c5e8e54fd38f6b243d68a15436363511afc797",
+      "head": "51073556dd2abf81320424cffda9b9f04cc22209",
       "openPrCount": 6,
       "ci": "success",
-      "ciUpdatedAt": "2026-09-22T03:46:30Z",
+      "ciUpdatedAt": "2026-09-22T05:06:52Z",
       "evidence": {
-        "state": "FRESH",
-        "freshnessReason": "manifest-at-head",
-        "calibrated": true,
+        "state": "STALE",
+        "freshnessReason": "repository-changed-after-manifest",
+        "calibrated": false,
         "baselineVerified": true,
         "manifestCommit": "e6c5e8e",
         "manifestGeneratedAt": "2026-09-22T09:18:47+08:00"
@@ -450,19 +450,19 @@
         "staleEvidencePolicy": "verified-baseline-visible-no-unverified-promotion",
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
-        "mergedPrCount": 91
+        "mergedPrCount": 92
       },
-      "engineeringProgress": 49,
+      "engineeringProgress": 56,
       "evidenceCoverage": 100,
-      "integrationCompleteCount": 12,
-      "buildingCount": 4,
-      "plannedCount": 17,
+      "integrationCompleteCount": 13,
+      "buildingCount": 8,
+      "plannedCount": 12,
       "notStartedCount": 0,
       "categories": [
         {
           "id": "foundation",
           "name": "系統基礎與登入安全",
-          "progress": 76
+          "progress": 84
         },
         {
           "id": "filesearch",
@@ -472,12 +472,12 @@
         {
           "id": "images",
           "name": "PDF／影像與三科查詢",
-          "progress": 38
+          "progress": 55
         },
         {
           "id": "application",
           "name": "申請、審核、給卷與還卷",
-          "progress": 35
+          "progress": 44
         },
         {
           "id": "circulation",
@@ -487,7 +487,7 @@
         {
           "id": "admin",
           "name": "報表、治理與後台管理",
-          "progress": 36
+          "progress": 43
         },
         {
           "id": "quality",
@@ -522,9 +522,9 @@
         {
           "id": "rbac",
           "name": "角色與權限管理",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
-          "status": "角色與權限需求已確認，正式角色權限模組尚未進入實作",
+          "progress": 60,
+          "stageLabel": "主要功能已完成",
+          "status": "伺服器端功能權限基礎與報表中心權限政策已完成並通過測試；完整角色維護流程仍待後續建置",
           "evidenceState": "已確認",
           "evidenceCount": 2
         },
@@ -567,9 +567,9 @@
         {
           "id": "land-use-images",
           "name": "地用科影像查詢",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
-          "status": "共用影像能力已完成，地用科專屬流程尚待正式建置",
+          "progress": 90,
+          "stageLabel": "整合驗證已完成",
+          "status": "地用科已完成真實目錄資料、漸進載入與實際檔案系統驗證",
           "evidenceState": "已確認",
           "evidenceCount": 2
         },
@@ -612,9 +612,9 @@
         {
           "id": "apply-submit",
           "name": "正式申請送出",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
-          "status": "正式送件明確列為後續階段，目前未建立正式案件",
+          "progress": 75,
+          "stageLabel": "自動測試已完成",
+          "status": "正式申請送出已完成 SQL Server 2019 持久化、交易保護與跨執行個體測試",
           "evidenceState": "已確認",
           "evidenceCount": 2
         },
@@ -693,11 +693,11 @@
         {
           "id": "reports",
           "name": "報表統計",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
-          "status": "報表統計已納入功能範圍，目前尚未正式實作",
+          "progress": 75,
+          "stageLabel": "自動測試已完成",
+          "status": "報表中心已完成正式資料查詢基礎，案卷目次表與機密檔案目錄表已完成查詢、權限、預覽及正式列印測試",
           "evidenceState": "已確認",
-          "evidenceCount": 1
+          "evidenceCount": 2
         },
         {
           "id": "document-import",
@@ -720,9 +720,9 @@
         {
           "id": "role-management",
           "name": "角色權限維護",
-          "progress": 20,
-          "stageLabel": "需求與規格已確認",
-          "status": "角色權限管理已確認需求，目前尚未正式實作",
+          "progress": 40,
+          "stageLabel": "建置中",
+          "status": "伺服器端功能權限資料層與授權服務已建立；角色權限後台維護仍在建置範圍",
           "evidenceState": "已確認",
           "evidenceCount": 2
         },
@@ -776,9 +776,9 @@
           "name": "自動化測試",
           "progress": 100,
           "stageLabel": "客戶驗收已完成",
-          "status": "目前 785 項自動測試全數通過",
+          "status": "截至 2026/9/22 已完成至少 1,588 項自動測試並持續通過",
           "evidenceState": "已確認",
-          "evidenceCount": 2
+          "evidenceCount": 3
         },
         {
           "id": "governance-evidence",
@@ -818,12 +818,17 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-22T03:48:51Z"
+          "at": "2026-09-22T05:08:48Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-22T03:46:30Z"
+          "at": "2026-09-22T05:06:52Z"
+        },
+        {
+          "kind": "update",
+          "sha": "5107355",
+          "at": "2026-09-22T05:06:05Z"
         },
         {
           "kind": "update",
@@ -834,11 +839,6 @@
           "kind": "update",
           "sha": "04a1507",
           "at": "2026-09-22T01:09:07Z"
-        },
-        {
-          "kind": "update",
-          "sha": "e99ab24",
-          "at": "2026-09-13T12:39:02Z"
         }
       ]
     }
