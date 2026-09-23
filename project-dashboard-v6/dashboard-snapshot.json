@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-23T04:47:27.164Z",
+  "generatedAt": "2026-09-23T11:39:59.348Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "d292f44953cbf022dff6849d143b767a67f1efe4",
+      "head": "d1e229dbfbf954cfb46bcedb899800b88534013d",
       "openPrCount": 6,
       "ci": "success",
-      "ciUpdatedAt": "2026-08-07T00:51:17Z",
+      "ciUpdatedAt": "2026-09-23T09:50:01Z",
       "evidence": {
-        "state": "FRESH",
-        "freshnessReason": "tree-equivalent",
-        "calibrated": true,
+        "state": "STALE",
+        "freshnessReason": "repository-changed-after-manifest",
+        "calibrated": false,
         "baselineVerified": true,
-        "manifestCommit": "4540ab2",
-        "manifestGeneratedAt": "2026-09-22T19:28:00+08:00"
+        "manifestCommit": "a1a16bf",
+        "manifestGeneratedAt": "2026-09-23T14:48:00+08:00"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -450,7 +450,7 @@
         "staleEvidencePolicy": "verified-baseline-visible-no-unverified-promotion",
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
-        "mergedPrCount": 97
+        "mergedPrCount": 99
       },
       "engineeringProgress": 56,
       "evidenceCoverage": 100,
@@ -816,29 +816,29 @@
       "nextStep": "完成正式環境上線前必要設定與影像路徑確認，再接續角色權限與後續業務流程建置。",
       "recent": [
         {
-          "kind": "update",
-          "sha": "d292f44",
-          "at": "2026-09-23T03:58:20Z"
-        },
-        {
-          "kind": "update",
-          "sha": "4540ab2",
-          "at": "2026-09-23T03:52:05Z"
-        },
-        {
-          "kind": "update",
-          "sha": "fe8cd52",
-          "at": "2026-09-23T03:42:11Z"
+          "kind": "check",
+          "status": "success",
+          "at": "2026-09-23T09:53:02Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-08-07T00:51:17Z"
+          "at": "2026-09-23T09:50:01Z"
         },
         {
-          "kind": "check",
-          "status": "success",
-          "at": "2026-08-07T00:46:25Z"
+          "kind": "update",
+          "sha": "d1e229d",
+          "at": "2026-09-23T09:49:18Z"
+        },
+        {
+          "kind": "update",
+          "sha": "566358c",
+          "at": "2026-09-23T09:42:02Z"
+        },
+        {
+          "kind": "update",
+          "sha": "a1a16bf",
+          "at": "2026-09-23T06:52:33Z"
         }
       ]
     }
