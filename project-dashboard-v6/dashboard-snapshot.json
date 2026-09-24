@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-23T21:31:37.990Z",
+  "generatedAt": "2026-09-24T04:54:11.858Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -20,7 +20,7 @@
   "prototype": {
     "status": "CONTROLLED",
     "freezeCommit": "eba2afa",
-    "dashboardHead": "e98d59f"
+    "dashboardHead": "0dc765c"
   },
   "publicSafety": {
     "rawManifestIncluded": false,
@@ -33,7 +33,7 @@
       "key": "codex",
       "label": "Codex Windows",
       "head": "2117ee391257ef2eed16e1bc7f1e73cb94cb89b8",
-      "openPrCount": 1,
+      "openPrCount": 3,
       "ci": "success",
       "ciUpdatedAt": "2026-08-23T13:03:55Z",
       "evidence": {
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "d1e229dbfbf954cfb46bcedb899800b88534013d",
-      "openPrCount": 6,
+      "head": "f8bebbaed01c149fc1b099a2496eba005d743ae4",
+      "openPrCount": 7,
       "ci": "success",
-      "ciUpdatedAt": "2026-09-23T09:50:01Z",
+      "ciUpdatedAt": "2026-09-04T16:29:00Z",
       "evidence": {
-        "state": "STALE",
-        "freshnessReason": "repository-changed-after-manifest",
-        "calibrated": false,
+        "state": "FRESH",
+        "freshnessReason": "tree-equivalent",
+        "calibrated": true,
         "baselineVerified": true,
-        "manifestCommit": "a1a16bf",
-        "manifestGeneratedAt": "2026-09-23T14:48:00+08:00"
+        "manifestCommit": "0ca2391",
+        "manifestGeneratedAt": "2026-09-24T07:20:00+08:00"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -450,7 +450,7 @@
         "staleEvidencePolicy": "verified-baseline-visible-no-unverified-promotion",
         "catalogFeatureCount": 33,
         "verifiedFeatureCount": 33,
-        "mergedPrCount": 99
+        "mergedPrCount": 100
       },
       "engineeringProgress": 56,
       "evidenceCoverage": 100,
@@ -816,29 +816,29 @@
       "nextStep": "完成正式環境上線前必要設定與影像路徑確認，再接續角色權限與後續業務流程建置。",
       "recent": [
         {
+          "kind": "update",
+          "sha": "f8bebba",
+          "at": "2026-09-23T23:48:47Z"
+        },
+        {
+          "kind": "update",
+          "sha": "0ca2391",
+          "at": "2026-09-23T23:17:31Z"
+        },
+        {
+          "kind": "update",
+          "sha": "7f5d722",
+          "at": "2026-09-23T23:16:57Z"
+        },
+        {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-23T09:53:02Z"
+          "at": "2026-09-04T16:29:41Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-23T09:50:01Z"
-        },
-        {
-          "kind": "update",
-          "sha": "d1e229d",
-          "at": "2026-09-23T09:49:18Z"
-        },
-        {
-          "kind": "update",
-          "sha": "566358c",
-          "at": "2026-09-23T09:42:02Z"
-        },
-        {
-          "kind": "update",
-          "sha": "a1a16bf",
-          "at": "2026-09-23T06:52:33Z"
+          "at": "2026-09-04T16:29:00Z"
         }
       ]
     }
