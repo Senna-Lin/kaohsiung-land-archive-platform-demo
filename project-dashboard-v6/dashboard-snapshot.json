@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-24T21:32:39.326Z",
+  "generatedAt": "2026-09-25T05:00:02.919Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "f8bebbaed01c149fc1b099a2496eba005d743ae4",
-      "openPrCount": 7,
+      "head": "a8ca26544715059f4480d985b5743143ddd2a198",
+      "openPrCount": 6,
       "ci": "success",
-      "ciUpdatedAt": "2026-09-23T23:49:38Z",
+      "ciUpdatedAt": "2026-09-24T22:32:45Z",
       "evidence": {
-        "state": "FRESH",
-        "freshnessReason": "tree-equivalent",
-        "calibrated": true,
+        "state": "STALE",
+        "freshnessReason": "repository-changed-after-manifest",
+        "calibrated": false,
         "baselineVerified": true,
-        "manifestCommit": "0ca2391",
-        "manifestGeneratedAt": "2026-09-24T07:20:00+08:00"
+        "manifestCommit": "dc4a43e",
+        "manifestGeneratedAt": "2026-09-25T05:48:32+08:00"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -818,27 +818,27 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-23T23:52:18Z"
+          "at": "2026-09-24T22:35:39Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-23T23:49:38Z"
+          "at": "2026-09-24T22:32:45Z"
         },
         {
           "kind": "update",
-          "sha": "f8bebba",
-          "at": "2026-09-23T23:48:47Z"
+          "sha": "a8ca265",
+          "at": "2026-09-24T22:31:55Z"
         },
         {
           "kind": "update",
-          "sha": "0ca2391",
-          "at": "2026-09-23T23:17:31Z"
+          "sha": "7659d8b",
+          "at": "2026-09-24T22:13:33Z"
         },
         {
           "kind": "update",
-          "sha": "7f5d722",
-          "at": "2026-09-23T23:16:57Z"
+          "sha": "7d0bbb7",
+          "at": "2026-09-24T21:51:49Z"
         }
       ]
     }
