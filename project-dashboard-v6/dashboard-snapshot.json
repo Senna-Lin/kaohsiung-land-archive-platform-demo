@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-25T11:53:22.069Z",
+  "generatedAt": "2026-09-25T17:13:47.398Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "3b3672e2f8b1420ac5f37d7dcd635d6c7f44898b",
+      "head": "b4bb41edf9ea3da54317adc3008028aca6b322d1",
       "openPrCount": 6,
       "ci": "success",
-      "ciUpdatedAt": "2026-09-25T08:20:02Z",
+      "ciUpdatedAt": "2026-09-25T14:59:40Z",
       "evidence": {
-        "state": "STALE",
-        "freshnessReason": "repository-changed-after-manifest",
-        "calibrated": false,
+        "state": "FRESH",
+        "freshnessReason": "tree-equivalent",
+        "calibrated": true,
         "baselineVerified": true,
-        "manifestCommit": "4a1c8c3",
-        "manifestGeneratedAt": "2026-09-25T07:42:00Z"
+        "manifestCommit": "cc1da50",
+        "manifestGeneratedAt": "2026-09-25T13:10:00Z"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -818,27 +818,27 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-25T08:24:45Z"
+          "at": "2026-09-25T15:04:10Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-25T08:20:02Z"
+          "at": "2026-09-25T14:59:40Z"
         },
         {
           "kind": "update",
-          "sha": "3b3672e",
-          "at": "2026-09-25T08:19:18Z"
+          "sha": "b4bb41e",
+          "at": "2026-09-25T14:58:53Z"
         },
         {
           "kind": "update",
-          "sha": "dce62f3",
-          "at": "2026-09-25T07:59:39Z"
+          "sha": "cc1da50",
+          "at": "2026-09-25T13:08:43Z"
         },
         {
           "kind": "update",
-          "sha": "4a1c8c3",
-          "at": "2026-09-25T07:42:48Z"
+          "sha": "1be1983",
+          "at": "2026-09-25T12:33:24Z"
         }
       ]
     }
