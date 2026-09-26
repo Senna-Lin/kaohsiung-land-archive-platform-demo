@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-09-25T21:37:06.880Z",
+  "generatedAt": "2026-09-26T05:00:37.034Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "b4bb41edf9ea3da54317adc3008028aca6b322d1",
+      "head": "729d5eff3f716fe3c3e2a3c1dd5513008857f837",
       "openPrCount": 6,
       "ci": "success",
-      "ciUpdatedAt": "2026-09-25T14:59:40Z",
+      "ciUpdatedAt": "2026-09-26T02:28:30Z",
       "evidence": {
         "state": "FRESH",
         "freshnessReason": "tree-equivalent",
         "calibrated": true,
         "baselineVerified": true,
-        "manifestCommit": "cc1da50",
-        "manifestGeneratedAt": "2026-09-25T13:10:00Z"
+        "manifestCommit": "7389fa8",
+        "manifestGeneratedAt": "2026-09-26T02:12:00.000Z"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -818,27 +818,27 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-25T15:04:10Z"
+          "at": "2026-09-26T02:28:30Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-09-25T14:59:40Z"
+          "at": "2026-09-26T02:23:34Z"
         },
         {
           "kind": "update",
-          "sha": "b4bb41e",
-          "at": "2026-09-25T14:58:53Z"
+          "sha": "729d5ef",
+          "at": "2026-09-26T02:22:42Z"
         },
         {
           "kind": "update",
-          "sha": "cc1da50",
-          "at": "2026-09-25T13:08:43Z"
+          "sha": "7389fa8",
+          "at": "2026-09-26T02:11:58Z"
         },
         {
           "kind": "update",
-          "sha": "1be1983",
-          "at": "2026-09-25T12:33:24Z"
+          "sha": "cbc210c",
+          "at": "2026-09-26T02:04:08Z"
         }
       ]
     }
