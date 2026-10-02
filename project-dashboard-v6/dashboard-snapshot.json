@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-10-02T09:48:32.022Z",
+  "generatedAt": "2026-10-02T17:53:08.598Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -435,7 +435,7 @@
       "head": "1ff799eb420ca5f336a4561cc92f8a3223b973d4",
       "openPrCount": 5,
       "ci": "success",
-      "ciUpdatedAt": "2026-08-10T18:46:26Z",
+      "ciUpdatedAt": "2026-10-02T09:24:59Z",
       "evidence": {
         "state": "FRESH",
         "freshnessReason": "manifest-at-head",
@@ -816,6 +816,16 @@
       "nextStep": "完成正式環境上線前必要設定與影像路徑確認，再接續角色權限與後續業務流程建置。",
       "recent": [
         {
+          "kind": "check",
+          "status": "success",
+          "at": "2026-10-02T09:24:59Z"
+        },
+        {
+          "kind": "check",
+          "status": "success",
+          "at": "2026-10-02T09:21:02Z"
+        },
+        {
           "kind": "update",
           "sha": "1ff799e",
           "at": "2026-10-02T09:20:23Z"
@@ -829,16 +839,6 @@
           "kind": "update",
           "sha": "e78e98d",
           "at": "2026-10-02T04:37:02Z"
-        },
-        {
-          "kind": "check",
-          "status": "success",
-          "at": "2026-08-10T18:46:37Z"
-        },
-        {
-          "kind": "check",
-          "status": "success",
-          "at": "2026-08-10T18:46:26Z"
         }
       ]
     }
