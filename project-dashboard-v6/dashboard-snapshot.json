@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-10-02T00:48:35.152Z",
+  "generatedAt": "2026-10-02T09:48:32.022Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "750a0c7f9233226e59ed8ba88f51d8e258c6ef57",
-      "openPrCount": 6,
+      "head": "1ff799eb420ca5f336a4561cc92f8a3223b973d4",
+      "openPrCount": 5,
       "ci": "success",
-      "ciUpdatedAt": "2026-10-02T00:36:49Z",
+      "ciUpdatedAt": "2026-08-10T18:46:26Z",
       "evidence": {
         "state": "FRESH",
-        "freshnessReason": "tree-equivalent",
+        "freshnessReason": "manifest-at-head",
         "calibrated": true,
         "baselineVerified": true,
-        "manifestCommit": "8c52595",
-        "manifestGeneratedAt": "2026-10-01T23:46:00.000Z"
+        "manifestCommit": "1ff799e",
+        "manifestGeneratedAt": "2026-10-02T04:36:00.000Z"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -816,29 +816,29 @@
       "nextStep": "完成正式環境上線前必要設定與影像路徑確認，再接續角色權限與後續業務流程建置。",
       "recent": [
         {
+          "kind": "update",
+          "sha": "1ff799e",
+          "at": "2026-10-02T09:20:23Z"
+        },
+        {
+          "kind": "update",
+          "sha": "88d5117",
+          "at": "2026-10-02T08:49:08Z"
+        },
+        {
+          "kind": "update",
+          "sha": "e78e98d",
+          "at": "2026-10-02T04:37:02Z"
+        },
+        {
           "kind": "check",
           "status": "success",
-          "at": "2026-10-02T00:36:49Z"
+          "at": "2026-08-10T18:46:37Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-10-02T00:31:17Z"
-        },
-        {
-          "kind": "update",
-          "sha": "750a0c7",
-          "at": "2026-10-02T00:30:42Z"
-        },
-        {
-          "kind": "update",
-          "sha": "8c52595",
-          "at": "2026-10-01T23:46:07Z"
-        },
-        {
-          "kind": "update",
-          "sha": "818ce6f",
-          "at": "2026-10-01T23:39:11Z"
+          "at": "2026-08-10T18:46:26Z"
         }
       ]
     }
