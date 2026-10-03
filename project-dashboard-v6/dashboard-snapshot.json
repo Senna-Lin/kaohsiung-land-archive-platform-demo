@@ -1,6 +1,6 @@
 {
   "schemaVersion": "2.2",
-  "generatedAt": "2026-10-02T22:16:03.126Z",
+  "generatedAt": "2026-10-03T05:21:01.408Z",
   "source": "github-actions-sanitized-private-evidence",
   "progressEngine": {
     "version": "customer-progress-v2.1",
@@ -432,17 +432,17 @@
     {
       "key": "antigravity",
       "label": "Antigravity Mac",
-      "head": "1ff799eb420ca5f336a4561cc92f8a3223b973d4",
-      "openPrCount": 6,
+      "head": "bb065fa4b1197964df61cedc87ec28c9c48cf701",
+      "openPrCount": 5,
       "ci": "success",
-      "ciUpdatedAt": "2026-10-02T09:24:59Z",
+      "ciUpdatedAt": "2026-10-03T00:59:11Z",
       "evidence": {
         "state": "FRESH",
-        "freshnessReason": "manifest-at-head",
+        "freshnessReason": "tree-equivalent",
         "calibrated": true,
         "baselineVerified": true,
-        "manifestCommit": "1ff799e",
-        "manifestGeneratedAt": "2026-10-02T04:36:00.000Z"
+        "manifestCommit": "6763916",
+        "manifestGeneratedAt": "2026-10-03T03:21:04+08:00"
       },
       "progressEngine": {
         "mode": "customer-progress-v2.1",
@@ -818,27 +818,27 @@
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-10-02T09:24:59Z"
+          "at": "2026-10-03T01:02:57Z"
         },
         {
           "kind": "check",
           "status": "success",
-          "at": "2026-10-02T09:21:02Z"
+          "at": "2026-10-03T00:59:11Z"
         },
         {
           "kind": "update",
-          "sha": "1ff799e",
-          "at": "2026-10-02T09:20:23Z"
+          "sha": "bb065fa",
+          "at": "2026-10-03T00:58:21Z"
         },
         {
           "kind": "update",
-          "sha": "88d5117",
-          "at": "2026-10-02T08:49:08Z"
+          "sha": "6763916",
+          "at": "2026-10-02T19:21:33Z"
         },
         {
           "kind": "update",
-          "sha": "e78e98d",
-          "at": "2026-10-02T04:37:02Z"
+          "sha": "3b90cb0",
+          "at": "2026-10-02T19:20:48Z"
         }
       ]
     }
